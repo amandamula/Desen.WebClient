@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Activitat 22, Amanda Mula. </title>
+        <meta charset="utf-8">
+    </head>
+    <body> 
+        <!-- A). Select from different kinf of pizzas (Pepperoni 6€, Quatro Formaggi 5€, Procciuto 4€,...) 
+            using a SELECT element and when one option is selected write its price inside a TEXT element. -->  
+
+        <p>Apartat A).</p>
+
+        <form>
+            <label>Tria una pizza : </label>
+            <select name="pizzes" id="pizza" onchange="CanviarPreu()">
+                <option value="6 eur"> Pepperoni</option>
+                <option value="5 eur"> Quatre Formaggi</option>
+                <option value="4 eur"> Prosciuto</option>
+            </select>
+            Preu : <input type="text" id="preu">
+        </form>
+        <br> 
+        <hr>
+
+        <!--B). Generate a cost estimation for a computer using 3 different SELECT elements which allow us to select :
+            Processor (Intel I3 - $400, Intel I5 $600, Intel I7 $800).
+            Monitor (Samsung 20' - $250, Samsung 22' - $350, Samsung 26' - $550)
+            Hard Disk (500 Gb - $300, 1 Tb - $440, 3 Tb - $500)
+        When we press the button Calculate the final cost is shown in a TEXT element.--> 
+
+        <p>Apartat B).</p> 
+        <form>
+            <label>Processador: </label>
+            <select name="processadors" id="processador">
+                <option value="400"> Intel I3</option>
+                <option value="600"> Intel I5</option>
+                <option value="700"> Intel I7</option>
+            </select>
+            <br>
+            <label>Monitor: </label>
+            <select name="monitors" id="monitor">
+                <option value="250"> Samsung 20'</option>
+                <option value="350"> Samsung 22'</option>
+                <option value="550"> Samsung 27'</option>
+            </select>
+            <br>
+            <label>Disc dur: </label>
+            <select name="discdurs" id="discDur">
+                <option value="300"> 500 GB</option>
+                <option value="440"> 1 TB</option>
+                <option value="500"> 3 TB</option>
+            </select>
+            <br><br>
+            <input type="button" value="Calcular" onclick="total()">
+            TOTAL : <input type="text" id="ptotal">
+        </form>
+        
+        <br> 
+        <hr>
+
+        <!--C). c) Select from different kinf of pizzas (Pepperoni 6€, Quatro Formaggi 5€, Procciuto 4€,...) 
+            using a SELECT element and enter how many pizzas we want in a TEXT element.
+            When we press the button Calculate the final cost is shown in another TEXT element.--> 
+
+        <p>Apartat C).</p> 
+        <form>
+            <label>Tria una pizza : </label>
+            <select name="pizzes" id="pizzes">
+                <option value="6"> Pepperoni</option>
+                <option value="5"> Quatre Formaggi</option>
+                <option value="4"> Prosciuto</option>
+            </select>
+            Quantitat : <input type="text" id="qtat">
+            <input type="button" value="Calcula Preu" onclick="calcularPreu()">
+            TOTAL :  <input type="text" id="total">
+        </form>
+        <br> 
+        <hr>
+
+        <!-- D). Generate an exam with 4 questions. Every question has 4 possible options and only one of them is right. 
+            Use a SELECT element for each question. There must be a button to calculate the final mark of the exam and show an alert message with the final mark.-->
+
+        <p>Apartat D).</p> 
+        <form>
+            <h3> Examen</h3>
+            <label> 1. On s'executa generalment el codi JavaScript?</label>
+            <select name="preg1" id="preg1">
+                <option value="si"> Client</option>
+                <option value="no"> Servidor</option>
+            </select>
+            <br>
+            <label> 2. Quines de les següents etiquetes s'utilitzen per el codi de JavaScript en les pàgines HTML? </label>
+            <select name="preg2" id="preg2">
+                <option value="no"> javascript _code </option>
+                <option value="no"> javascript </option>
+                <option value="si"> script</option>
+            </select>
+            <br>
+            <label> 3. La cridada al codi JavaScript s'ha de colocar a : </label>
+            <select name="preg3" id="preg3">
+                <option value="no"> Al body de la pàgina</option>
+                <option value="si"> Al body o al head</option>
+                <option value="no"> Abans de l'etiqueta HTML</option>
+            </select>
+            <br>
+            <label> 4. Quina d'aquestes instrucions s'utilitza per tornar un valor a una funció de JavaScript? </label>
+            <select name="preg4" id="preg4">
+                <option value="no"> value</option>
+                <option value="si"> return</option>
+                <option value="no"> send</option>
+            </select>
+            <br><br>
+            <input type="button" value="Qualificar" onclick="qualificar()">
+
+        </form>
+
+
+
+
+        <script>
+
+            // Apartat A
+            function CanviarPreu(){
+
+                var x = document.getElementById("pizza");
+                document.getElementById("preu").value = x.options[x.selectedIndex].value;
+            }
+
+            // Apartat B
+
+            var preu1;
+            var preu2;
+            var preu3;
+
+            function total(){
+
+                var x = document.getElementById("processador");
+                preu1 = x.options[x.selectedIndex].value;
+                preu1 = parseInt(preu1);
+
+                var y = document.getElementById("monitor");
+                preu2 =  y.options[y.selectedIndex].value;
+                preu2 = parseInt(preu2);
+
+                var z = document.getElementById("discDur");
+                preu3 =  z.options[z.selectedIndex].value;
+                preu3 = parseInt(preu3);
+
+                var preuTotal = preu1 + preu2 + preu3;
+
+                document.getElementById("ptotal").value = preuTotal;
+
+            }
+
+            // Apartat C
+
+            function calcularPreu(){
+                var x = document.getElementById("pizzes");
+                var preu = x.options[x.selectedIndex].value;
+                var qtat = document.getElementById("qtat").value;
+                preu = parseInt(preu);
+                qtat = parseInt(qtat);
+
+                var total = preu * qtat;
+
+                document.getElementById("total").value = total;
+
+
+            }
+
+            // Apartat D
+
+            function qualificar(){
+                var resp1 = document.getElementById("preg1");
+                var resp2 = document.getElementById("preg2");
+                var resp3 = document.getElementById("preg3");
+                var resp4 = document.getElementById("preg4");
+                var nota = 0;
+            
+
+                if(resp1.options[resp1.selectedIndex].value == "si"){
+                    nota += 2.5;
+                }
+                if(resp2.options[resp2.selectedIndex].value == "si"){
+                    nota += 2.5;
+                }
+                if(resp3.options[resp3.selectedIndex].value == "si"){
+                    nota += 2.5;
+                }
+                if(resp4.options[resp4.selectedIndex].value == "si"){
+                    nota += 2.5;
+                }
+
+                if(nota >= 5){
+                alert("Enhorabona!! Has aprovat! \nLa teva nota és un: " + nota);
+                }else{
+                    alert("Hauràs de recuperar. \nLa teva nota és un : " + nota);
+                }
+            }
+
+        </script>
+    </body>
+</html>

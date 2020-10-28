@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Activitat 20, Amanda Mula. </title>
+        <meta charset="utf-8">
+    </head>
+    <body> 
+        <!-- A). Enter a number in a text field and when we press a button an alert message shows the square of this number.
+        B). Enter two numbers in 2 text fields and when we press a button an alert message shows the biggest one.
+        C). Enter a name and a surname in 2 text fields, and when we press a button an alert message shows
+            a text with concatenated name and surname. -->  
+
+        <p>Apartat A).</p> </br>
+        <form>
+            Escriu un Nombre : <input type="text" id="item"/>
+            <button id ="b1" onclick="arrelQuadrada()">Calcular Arrel Quadrada</button>
+            <hr>
+        </form>
+
+        <form>
+            <p>Apartat B).</p> </br>
+            Escriu el 1r nombre : <input type="text" id="num1"/>
+            Escriu el 2n nombre : <input type="text" id="num2"/>
+            <button id ="b2" onclick="comparar()">Comparar</button>
+            <hr>
+        </form>
+        
+        <p>Apartat C).</p></br>
+        <form>
+            Introdueix el teu nom : <input type="text" id="nom"/>
+            I el teu llinatge : <input type="text" id="lli1"/>
+            <button id ="b3" onclick="mostrar()">Mostrar</button>
+        </form>  
+        <hr>
+        <script>
+
+            function arrelQuadrada(){
+                var x = document.getElementById("item").value;
+                alert("L'arrel quadrada és : " + Math.sqrt(x));
+            }
+
+            function comparar(){
+                alert("El nombre més gran és : " + Math.max(document.getElementById("num1").value,document.getElementById("num2").value));
+            }
+
+            function mostrar(){
+                var txt = document.getElementById("nom").value + " " + document.getElementById("lli1").value
+                alert("El teu nom i llinatge és : " + txt);
+            }
+
+
+
+        </script>
+    </body>
+</html>

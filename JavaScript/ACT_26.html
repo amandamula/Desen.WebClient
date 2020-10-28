@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Activtat 26, Amanda Mula. </title>
+        <meta charset="utf-8">
+        <script>
+            /* A). Enter a username and password and then show an alert message if the password 
+            is shorter than 7 characters or longer than 20 characters.*/
+
+            function buidar(control){
+                
+                control.value = '';
+            }
+
+            function esCorrecte(control){
+                if(control.value.length < 7 || control.value.length > 12 ){
+                    alert("La contrasenya no és correcte.");
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+        <form>
+            <label> Introdueix el teu usuari : </label>
+            <input type="text" value="usuari" onfocus="buidar(this)">
+            <label> Ara la contrasenya </label>
+            <input type="password" onblur="esCorrecte(this)">
+            <input type="button" value="Entrar">     
+    </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Activitat 16 A, Amanda Mula. </title>
+        <meta charset="utf-8">
+        <script>
+            /* A). Create an 8 elements vector and introduce 8 numbers. Finally it must print:
+                    Total sum of the 8 numbers.
+                    Average of the 8 numbers.
+                    Total sum of the elements higher than 5.
+                    How many numbers are higher than 5.*/
+        
+        </script>
+    </head>
+    <body>
+        <script>
+
+        function introduirNombres(nombres){
+
+            for( var i = 0; i < nombres.length; i++){
+                
+                var nombre = prompt("Introdueix un nombre : ","");
+                nombres[i] = parseInt(nombre);
+            }
+   
+        }
+
+        function sumar(nombres){
+            var suma = 0;
+
+            for(var i = 0; i < nombres.length ; i++){
+                suma += nombres[i];
+            }
+
+            return suma;   
+        }
+
+        function mitja(nombres){
+
+            var suma = sumar(nombres);
+            var mitja = suma / nombres.length;
+
+            return mitja;
+
+        }
+
+        function sumaElementsMajor5 (nombres){
+
+            var suma = 0;
+
+            for(var i = 0; i <nombres.length; i++){
+                if(nombres[i] > 5){
+                    suma += nombres[i];
+                }
+            }
+
+            return suma;
+        }
+
+        function contadorNombres(nombres){
+
+            var contador = 0;
+
+            for(var i = 0; i < nombres.length ; i++){
+                if(nombres[i] > 5){
+                    contador++;
+                }
+            }
+
+            return contador;
+        }
+            document.write("Apartat A). </br>");
+
+            var nombres = new Array(8);
+            introduirNombres(nombres);
+            document.write("La suma dels nombres de l'Array és : " + sumar(nombres) + ".<br>");
+            document.write("La mitja dels nombres de l'Array és : " + mitja(nombres) + ".<br>");
+            document.write("La suma dels nombres major que 5 de l'Array és : " + sumaElementsMajor5(nombres) + ".<br>");
+            document.write(" Tenim " + contadorNombres(nombres) + " nombres majors que 5 a l'Array.<br>");
+            
+            document.write("<hr>");
+            
+            
+        </script>
+    </body>
+</html>
+     

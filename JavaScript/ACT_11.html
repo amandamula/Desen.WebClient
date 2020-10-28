@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Activitat 11, Amanda Mula. </title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+        /* A). Enter positive and negative numbers until we enter the number 9999, sum all of them, 
+        print the value and print the message:
+                "ZERO" if the value of the sum is zero.
+                "POSITIVE" if the value of the sum is positive.
+                "NEGATIVE" if the value of the sum is negative.*/
+
+            document.write("Apartat A). </br>");
+
+            var numMaxim = 9999;
+            var num = prompt("Introdueix un nombre per sumar : ", "");
+            var suma = 0;
+
+            do {
+                num = parseFloat(num);
+                suma = suma + num;
+                suma = parseFloat(suma);
+                num = prompt("Introdueix un nombre per sumar : ", "");
+    
+            } while(num != numMaxim);
+
+            document.write("La suma dels nombres és : " + suma + "<br>");
+
+            if (suma > 0) {
+                document.write("Positiva.");
+            } else if (suma < 0) {
+                document.write("negativa.");
+            } else {
+                document.write("Zero.");
+            }
+
+            document.write("<hr>");
+
+        /* B). Enter people information: id number, age and sex (male/female) until we enter the number 0 as ID number, 
+        and then print the following information:
+            How many people are there?
+            How many men are there? How many women are there?
+            How many men are between 18 and 65 years old?
+            What is the name of the oldest woman?
+            What is the ID number of the youngest man? */
+
+            document.write("Apartat B). </br>");
+            
+            var dones = 0;
+            var homes = 0;
+            var edatDeTreballar = 0;
+            var edatMesVell = 0;
+            var nomMajor;
+            var edatPetit = 150;
+            var idMenor;
+            var contador = 0;
+
+            do {
+                var nom = prompt("Introdueix el teu nom: ", "");
+                var id = prompt("El teu id: ", "");
+                var edat = prompt("La teva edat: ", "");
+                var sexe = prompt("El teu sexe: ", "M/F");
+            
+                if (sexe == "F") {
+                    dones++;
+                }else{
+                    homes++;
+                }
+
+                if (edat >= 18 && edat <= 65) {
+                    edatDeTreballar++;
+                }
+
+                if (edat > edatMesVell) {
+                    edatMesVell = edat;
+                    nomMajor = nom;
+                }
+
+                if(edat < edatPetit){
+                    edatPetit = edat;
+                    idMenor = id;
+                }
+
+                contador++;
+
+            } while (id != 0);
+
+            document.write("Tenim " + contador + " persones.");
+            document.write("<br>");
+            document.write("De les quals " + dones + " són dones i " + homes + " són homes.");
+            document.write("<br>");
+            document.write(edatDeTreballar + " persones són majors de 18 i menors de 65 anys.");
+            document.write("<br>");
+            document.write("La persona més vella és : " + nomMajor);
+            document.write("<br>");
+            document.write("L'id de la persona més jove és : " + idMenor);
+            
+            
+        document.write("<hr>");
+
+        /* C). Enter bank accounts information: account number, client name and money. Calculate the sum of all the bank accounts.
+        For each account information print the following message:
+            "{CLIENT NAME} is the owner of {ACCOUNT NUMBER} account with {MONEY} €."*/
+
+            document.write("Apartat C). </br>");
+
+            var suma = 0;
+
+            do {
+                var nom = prompt("Introdueix el teu nom : ", "");
+                var numCont = prompt("Ara el teu compte bancari : ", "");
+                var diners = prompt("Els diners que vols ingressar : ", "");
+                diners = parseFloat(diners);
+                document.write("{" + nom + "} és el propietari del compte {" + numCont + "} on hi ha " + diners + " euros." + "<br>");
+                suma = suma + diners;
+            } while (diners != 0);
+
+            document.write("La suma dels diners de tots els comptes és de " + suma + " euros");
+
+            document.write("<hr>");
+        </script>
+    </body>
+</html>

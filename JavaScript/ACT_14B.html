@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Activitat 14 B, Amanda Mula. </title>
+        <meta charset="utf-8">
+        <script>
+            /* B). Create a class called Person (name and age), a class called Company (name and top age workers).
+         Write a script to create 2 workers and 1 company. Show how many people are able to work in this company..*/
+
+            // Classe Persona
+
+            function Persona(nom,edat){
+
+                this.nom = nom;
+                this.edat = edat;
+
+            }
+
+
+            // Classe Company
+
+            function Company(nom){
+
+                this.nom = nom;
+                this.numTreballadors = 0;
+                this.treballadors = new Array();
+                this.edatTop = 0;
+
+                this.afegirTreballadors = afegirTreballadors;
+                this.imprimirTreballadors = imprimirTreballadors;
+                this.mostrarNum = mostrarNum;
+
+                function afegirTreballadors(Persona){
+
+                    this.treballadors[this.numTreballadors] = Persona;
+                    this.numTreballadors++;
+                    if(this.edatTop < Persona.edat){
+                        this.edatTop = Persona.edat;
+                    }
+
+                }
+
+                function mostrarNum(){
+                    document.write("Tenim " + this.numTreballadors + " treballadors a la companyia " + this.nom + " : <br>");
+                    this.imprimirTreballadors();
+                    document.write("El treballador més gran té : " + this.edatTop + " anys.");
+
+                }
+
+                function imprimirTreballadors(){
+                    for(var i = 0; i < this.numTreballadors; i++){
+                        document.write(this.treballadors[i].nom + " , " + this.treballadors[i].edat + ". <br>");
+                    }
+                }
+
+
+
+            
+            }
+
+
+
+        </script>
+    </head>
+    <body>
+        <script>
+        
+           document.write("Apartat B). </br>");
+           
+           var p1 = new Persona("Amanda",28);
+           var p2 = new Persona("Marti",29);
+
+           var companyia = new Company("Company");
+           companyia.afegirTreballadors(p1);
+           companyia.afegirTreballadors(p2);
+           companyia.mostrarNum();
+           document.write("<hr>");
+           
+        
+        
+
+
+        </script>
+    </body>
+</html>

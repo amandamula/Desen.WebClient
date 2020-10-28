@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Activitat 23, Amanda Mula. </title>
+        <meta charset="utf-8">
+    </head>
+    <body> 
+        <!-- A). Check three different checkbox elements (Football, Tennis, and Karate).
+             Finally when we press a button an alert message must appear showing the selected sports. -->
+            <form>
+                Selecciona un o més esports : <br>
+                <input type="checkbox" id="Futbol"> Futbol
+                <input type="checkbox" id="Tenis"> Tennis
+                <input type="checkbox" id="Karate"> Karate
+                <input type="button" value="Esports" onClick="mostrarEsports()">
+            </form>
+            <script>
+
+                var txt = "";
+                function mostrarEsports(){
+                    if(document.getElementById("Futbol").checked){
+                        txt += "Futbol ";
+                    }
+                    
+                    if(document.getElementById("Tenis").checked){
+                        txt += "Tenis ";
+                    }
+                    
+                    if(document.getElementById("Karate").checked){
+                        txt += "Karate ";
+                    }
+
+                    alert("Has seleccionat " + txt);
+                    txt = "";
+                }
+            </script>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Activitat 24, Amanda Mula. </title>
+        <meta charset="utf-8">
+    </head>
+    <body> 
+        <!-- A). a) Select from two RADIO elements: 1) Older than 18, or 2) Younger than 18.
+            Finally when we press a button an alert message must appear informing about if we can enter to the site or not. -->
+            <form>
+                <input type="radio" name="radio" id="major"> Som major de 18 anys.<br>
+                <input type="radio" name="radio" id="menor"> Som menor de 18 anys.<br>
+                <input type="button" value="Enviar" onClick="esMajor()">
+            </form>
+            <script>
+
+                function esMajor(){
+                    if(document.getElementById("major").checked){
+                        alert("Ets major d'edat.");
+                    }else if(document.getElementById("menor").checked){
+                        alert("Ets menor d'edat");
+                    }else{
+                        alert("Has de seleccionar una opció.")
+                    }
+                }
+            </script>
+    </body>
+</html>

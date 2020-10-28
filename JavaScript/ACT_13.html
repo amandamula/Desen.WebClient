@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Activitat 13, Amanda Mula. </title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+        /* A). Receives three numbers and returns the minimum.*/
+            document.write("Apartat A). </br>");
+
+            function nombreMenor(n1, n2, n3) {
+
+                if (n1 <= n2) {
+                    if (n1 <= n3) {
+                        document.write("El nombre més petit es el " + n1);
+                    } else {
+                        document.write("El nombre més petit es el " + n3);
+                    }
+
+                } else if (n2 <= n3) {
+                    document.write("El nombre més petit es el " + n2);
+                } else {
+                    document.write("El nombre més petit es el " + n3);
+                }
+
+            }
+
+            var num1 = prompt("Introdueix el 1r nombre : ", "");
+            var num2 = prompt("Introdueix el 2n nombre : ", "");
+            var num3 = prompt("Introdueix el 3r nombre : ", "");
+
+            nombreMenor(num1, num2, num3);
+            document.write("<hr>");
+
+        /* B). Receives three numbers and prints them orderly ascendent. */
+            document.write("Apartat B). </br>");
+
+            var ordre = "";
+
+            function ordenarNombres(n1, n2, n3) {
+
+                if (n1 <= n2) {
+                    if (n1 <= n3) {
+                        ordre += (n1 + " ");
+
+                        if (n2 <= n3) {
+                            ordre += (n2 + " " + n3);
+                        } else {
+                            ordre += (n3 + " " + n2);
+                        }
+
+                    } else {
+                        ordre += (n3 + " ");
+                    
+                        if (n1 <= n2) {
+                            ordre += (n1 + " " + n2);
+                        } else {
+                            ordre += (n2 + " " + n1);
+                        }
+                    }
+
+                } else if (n2 <= n3) {
+                    ordre += (n2 + " ");
+
+                    if (n3 <= n1) {
+                        ordre += (n3 + " " + n1);
+                    } else {
+                        ordre += (n1 + " " + n3);
+                    }
+
+                } else {
+                    ordre += (n3 + " ");
+
+                    if (n1 <= n2) {
+                        ordre += (n1 + " " + n2);
+                    } else {
+                        ordre += (n2 + " " + n1);
+                    }
+                }
+
+                document.write(ordre);
+
+            }
+
+            var num1 = prompt("Introdueix el 1r nombre : ", "");
+            num1 = parseInt(num1);
+            var num2 = prompt("Introdueix el 2n nombre : ", "");
+            num2 = parseInt(num2);
+            var num3 = prompt("Introdueix el 3r nombre : ", "");
+            num3 = parseInt(num3);
+
+            ordenarNombres(num1, num2, num3);
+            document.write("<hr>");
+
+        /* C). Receives the side of a square and returns its perimeter.*/
+            document.write("Apartat C). </br>");
+
+            function perimetre(l) {
+
+                var perimetre = l * 4;
+                document.write("El perímetre és de : " + perimetre);
+            }
+
+            var costat = prompt("Introdueix el costat d'un quadrat : ");
+
+            perimetre(costat);
+            document.write("<hr>");
+
+        /* D). Receives a number and returns how many digits it has.*/
+            document.write("Apartat D). </br>");
+
+            function nombreDigits(nombre) {
+                
+                if (nombre < 10) {
+                    document.write("El nombre té un dígit.");
+                } else if (nombre >= 10 && nombre < 100) {
+                    document.write("El nombre té dos dígits.");
+                } else if (nombre >= 100 && nombre < 1000) {
+                    document.write("El nombre té tres dígits.");
+                } else {
+                    document.write("El nombre té més de tres dígits.");
+                }
+            }   
+
+            var nombre = prompt("Introdueix un nombre: ", "");
+
+            nombreDigits(nombre);
+            document.write("<hr>");
+
+        /* E).  Receives three numbers and returns the average.*/
+            document.write("Apartat E). </br>");
+
+            function mitja(n1, n2, n3) {
+                var n1 = parseFloat(n1);
+                var n2 = parseFloat(n2);
+                var n3 = parseFloat(n3);
+
+                var suma = (n1 + n2 + n3);
+                var mitja = (suma) / 3;
+
+                document.write("La mitjana és : " + mitja);
+            }
+
+            var num1 = prompt("Introdueix el 1r nombre : ", "");
+            var num2 = prompt("Introdueix el 2n nombre : ", "");
+            var num3 = prompt("Introdueix el 3r nombre : ", "");
+            mitja(num1, num2, num3);
+            document.write("<hr>");
+
+        /* F). Let us enter five numbers and return the sum.*/
+            document.write("Apartat F). </br>");
+
+            function suma(n1, n2, n3, n4, n5) {
+                var n1 = parseFloat(n1);
+                var n2 = parseFloat(n2);
+                var n3 = parseFloat(n3);
+                var n4 = parseFloat(n4);
+                var n5 = parseFloat(n5);
+
+                var suma = (n1 + n2 + n3 + n4 + n5);
+                document.write("La suma dels nombres és : " + suma);
+            }
+
+            var num1 = prompt("Introdueix un nombre", "");
+            var num2 = prompt("Introdueix un nombre", "");
+            var num3 = prompt("Introdueix un nombre", "");
+            var num4 = prompt("Introdueix un nombre", "");
+            var num5 = prompt("Introdueix un nombre", "");
+
+            suma(num1, num2, num3, num4, num5);
+            document.write("<hr>");
+
+        </script>
+    </body>
+</html>

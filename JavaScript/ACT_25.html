@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Activitat 25, Amanda Mula. </title>
+        <meta charset="utf-8">
+    </head>
+    <body> 
+        <!-- A). Enter a user name, email and comments (TEXTAREA) for a visit book. 
+            Then use an alert message to show the introduced data. -->
+            <form>
+                NOM : <input type="text" id="nom"><br><br>
+                CORREU : <input type="email" id="email"><br><br>
+                COMENTARI : <textarea id="comentaris"> </textarea><br><br>
+                <input type="button" value="Enviar" onClick="mostrarDades()">
+            </form>
+            <script>
+
+                function mostrarDades(){
+                    
+                    alert("Hola " + document.getElementById("nom").value + ", el teu correu és : " + document.getElementById("email").value + ".\n"
+                    + "El teu comentari és el següent: " + document.getElementById("comentaris").value + ".");
+                }
+            </script>
+    </body>
+</html>

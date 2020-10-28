@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript, Activitat 04.</title>
+    <script>
+// a). Enter the side length of a square, and print its perimeter.
+
+        var long = prompt("Apartat A. Escriu la llongitud del costat : ", "");
+        var perimetre = parseInt(long) * 4;
+
+        document.write("Apartat A). ");
+        document.write("</br>");
+        document.write("El perimetre del cuadrat es : ");
+        document.write(perimetre);
+        document.write("<hr>");
+
+// b). Enter four numbers, and print the addition and the product of them.
+
+        var num1 = prompt("Apartat B. Escriu el 1r nombre","");
+        var num2 = prompt("Apartat B. Escriu el 2n nombre","");
+        var num3 = prompt("Apartat B. Escriu el 3r nombre","");
+        var num4 = prompt("Apartat B. Escriu el 4t nombre","");
+
+        var suma = parseInt(num1) + parseInt(num2) + parseInt(num3) + parseInt(num4);
+        var producte = parseInt(num1) * parseInt(num2) * parseInt(num3) * parseInt(num4);
+
+        document.write("Apartat B). ");
+        document.write("</br>");
+        document.write("La suma dels quatre nombres es: ");
+        document.write(suma);
+        document.write(" i el producte es: ");
+        document.write(producte);
+        document.write("<hr>");
+
+// c). Enter the price and quantity of two products, and print the bill.
+
+        var preu = prompt("Apartat C. Introdueix l'import del prodcute: ","");
+        var quant = prompt("Apartat C. Introduex la quantitat desitjada: ", "");
+
+        var factura = parseInt(preu) * parseInt(quant);
+
+        document.write("Apartat C). ");
+        document.write("</br>");
+        document.write("El total de la factura es: ");
+        document.write(factura);
+        document.write("<hr>");
+
+// d). Enter the base and the height of a triangle, and print its area.
+
+        var base = prompt("Apartat D. Escriu la base d'un triangle : ","");
+        var altura = prompt("Apartat D. Escriu l'altura del mateix : ","");
+
+        var area = (parseInt(base) * parseInt(altura)) / 2;
+
+        document.write("Apartat D).");
+        document.write("</br>");
+        document.write("L'area del triangle és: ");
+        document.write(area);
+        document.write("<hr>");
+
+    </script>
+</head>
+<body>
+</body>
+</html>

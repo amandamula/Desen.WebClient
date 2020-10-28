@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        ACT 06.
+    </title>
+</head>
+<body>
+    <script>
+
+        /* A) Enter two numbers N1 and N2, if the first one is bigger than the Secon de one then it prints the addition N1 + N2 ,
+         otherwise it prints the difference N 2 -N 1 .*/
+
+        var num1 = prompt("Introdueix el 1r nombre.","");
+        var num2 = prompt("Introdueix el 2n nombre","");
+
+        document.write("Apartat A). </br>");
+
+        if(num1 > num2){
+            document.write(parseInt(num1) + parseInt(num2));
+        }else{
+            document.write(parseInt(num2) - parseInt(num1));
+        }
+
+        document.write("<hr>");
+
+        /* B) Enter three marks of a student, if the average is higher or equal to 5 then a message "You pass!" must appear, 
+        otherwise a message "You fail!" must be shown.*/
+
+        document.write("Apartat B). </br>");
+
+        var nota1 = prompt("Introduexi la teva 1r nota.","");
+        var nota2 = prompt("Introduexi la teva 2n nota.","");
+        var nota3 = prompt("Introduexi la teva 3r nota.","");
+
+        var notaFinal = ( parseInt(nota1) + parseInt(nota2) + parseInt(nota3) ) / 3;
+
+        if(notaFinal >= 5 ){
+            document.write("Enhorabona. Has aprovat!");
+        }else{
+            document.write("Ohh, has suspes!");
+        }
+
+        document.write("<hr>");
+
+       /* C) Enter an integer number, and if the number is pair then the message "Pair Number" must appear, 
+       otherwise the message "Odd Number" must appear.*/
+       document.write("Apartat C). </br>");
+
+       var nombre = prompt("Introdueix un nombre : ","");
+
+       if(nombre % 2 == 0){
+           document.write("El nombre " + nombre + " és par.");
+       }else{
+           document.write("El nombre " + nombre + " és impar.");
+       }
+
+       document.write("<hr>");
+
+
+       /* D) Enter the age of a person, and if the age is between 18 and 65 then the message "Working Age" must appear, 
+       otherwise the message "Not Working Age" must appear.*/
+
+       document.write("Apartat B). </br>");
+
+       var edat = prompt("Quina és la teva edat?","");
+
+            if( edat >= 18 && edat < 65)
+            {
+                document.write("Estàs en edat de treballar.");
+            }else{
+                document.write("No estàs en edat de treballar.");
+
+            }
+
+
+    </script>
+</body>
+</html>

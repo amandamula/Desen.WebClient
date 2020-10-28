@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Activitat 09, Amanda Mula. </title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    <script>
+        /* A). Enter one of the following words (house, table, dog, cat) and then print the translation into Spanish or Catalan.*/
+
+        document.write("Apartat A). </br>");
+        
+        var paraula = prompt("Introdueix una paraula d'aquestes : house, table, dog or cat." ,"");
+
+        switch(paraula){
+            case "house": document.write("Casa.");
+            break;
+            case "table": document.write("Taula.");
+            break;
+            case "dog": document.write("Ca.");
+            break;
+            case "cat": document.write("Moix.");
+            break;
+        }
+
+        document.write("<hr>");
+
+        /* B). Enter a number and then print the corresponding month (1: January, 2: February, .... 12: December).*/
+
+        document.write("Apartat B). </br>");
+
+        var mes = prompt("Escriu un nombre de l'1 al 12." ,"");
+        mes = parseInt(mes);
+
+        switch(mes){
+
+            case 1: document.write("Gener");
+            break;
+            case 2: document.write("Febrer");
+            break;
+            case 3: document.write("Març");
+            break;
+            case 4: document.write("Abril");
+            break;
+            case 5: document.write("Maig");
+            break;
+            case 6: document.write("Juny");
+            break;
+            case 7: document.write("Juliol");
+            break;
+            case 8: document.write("Agost");
+            break;
+            case 9: document.write("Setembre");
+            break;
+            case 10: document.write("Octubre");
+            break;
+            case 11: document.write("Novembre");
+            break;
+            case 12: document.write("Desembre");
+            break;
+            
+            
+        }
+
+        document.write("<hr>");
+        /* C). Enter a number and then print the number of days of the corresponding month (January: 31, February: 28, .... December: 31).*/
+        document.write("Apartat C). </br>");
+
+        var diesMes = prompt("Escriu un mes: " ,"");
+        
+
+        switch(diesMes){
+            case "Gener":
+            case "Març":
+            case "Maig":
+            case "Juliol":
+            case "Agost":
+            case "Octubre":
+            case "Desembre":
+
+            document.write("Aquest més té 31 diés.");
+            break;
+
+            case 2:
+            document.write("Aquest més té 28 o 29 dies.");
+            break;
+
+            case "Abril":
+            case "Juny": 
+            case "Setembte":
+            case "Novembre" :
+            document.write("Aquest més té 30 dies.");
+            break;
+        
+        }
+
+        document.write("<hr>");
+        
+        /* D). Enter a letter and then print "Vowel" or "Consonant" depending on the entered letter.*/
+        document.write("Apartat D). </br>");
+        var lletra = prompt("Escriu una lletra de l'alfabet." ,"");
+
+        switch(lletra){
+            case "a":
+            case "e":
+            case "i":
+            case "o":
+            case "u":
+            document.write("VOCAL!");
+            break;
+            default:
+            document.write("CONSONANT!");
+        }
+
+        document.write("<hr>");
+    </script>
+    </body>
+</html>

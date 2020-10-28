@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript, Activitat 05.</title>
+    </head>
+    <body>
+        <script>
+        /* A). Enter the name and three marks of a student, if the average is bigger than or equal to 5 
+        then the message "Congratulations! You pass the exam" must appear.*/
+
+            var nota1 = prompt("Introdueix la nota de la 1r Avaluacio: ","");
+            var nota2 = prompt("Introdueix la nota de la 2n Avaluacio: ","");
+            var nota3 = prompt("Introdueix la nota de la 3r Avaluacio: ","");
+
+            var notaFinal = ( parseInt(nota1) + parseInt(nota2) + parseInt(nota3) ) / 3;
+
+            if(notaFinal >= 5)
+            {   
+                document.write("Enhorabona! Has aprovat.");
+            }else{ 
+                document.write("Ohh. Hauras de recuperar.");
+            }
+
+            document.write("<hr>");
+
+        // B). Enter an email twice, and print the message "Emails are different!" if they are not equal.
+
+            var email1 = prompt("Introdueix un correu electronic : ","");
+            var email2 = prompt("Torna a escriure el correu electrònic: ","");
+
+            if(email1 != email2){
+                document.write("Els correus són diferents.");
+            }
+
+            document.write("<hr>");
+
+        /* C). Enter the age of a person, if the person is an adult (older than or equal to 18) 
+        and is not retired (less than 65) then the message "You are in working age." must appear. */
+
+            var edat = prompt("Quina és la teva edat?","");
+
+            if( edat >= 18 && edat < 65)
+            {
+                document.write("Estàs en edat de treballar");
+            }
+
+            document.write("<hr>");
+
+        // D). Enter an integer number, if the number is pair then the message "Pair number!" must appear.
+
+            var nombre = prompt("Tria un nombre, i mirarem si es par.","");
+
+            if( (nombre % 2) == 0)
+            {
+                document.write("Aquest nombre és par.");
+            }
+
+
+
+    
+        </script>
+    </body>
+</html>

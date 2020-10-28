@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Activitat 16 B, Amanda Mula. </title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+
+
+            var mida = prompt("Introdueix la mida de l'array : ","");
+            var num1 = prompt("Ara introdueix el 1r valor de l'array : ","");
+            var num2 = prompt("finalment, introdueix el 2n valor de l'array : ","");
+               
+          
+            var array = new Array(mida);
+            num1 = parseInt(num1);
+            num2 = parseInt(num2);
+           
+
+            // Amb array.length no funciona.
+
+                for(var i = 0; i < mida; i++){
+                    if(i % 2 == 0){
+                        array[i] = num1;
+                    }else{
+                        array[i] = num2;
+                    }
+                }
+
+
+            function sumar(array){
+
+                var suma = 0;
+
+                for(var i = 0; i < array.length; i++){
+                    suma += parseInt(array[i]);
+                }
+
+                return suma;
+            }
+
+            document.write("Apartat B). </br>");
+
+            document.write("L'array quedarà així : " + array + ". <br>");
+            document.write("I la suma dels valors de l'array és : " + sumar(array));
+            
+            document.write("<hr>");
+        </script>
+    </body>
+</html>

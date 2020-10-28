@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        ACT 08, Amanda Mula.
+    </title>
+</head>
+<body>
+    <script>
+        /* A) Enter a date, and print a message "Today is Christmas" if the date is this year's Christmas. 
+        (Date must be entered in parts: day, month and year).*/
+
+        document.write("Apartat A). </br>");
+
+        var dia = prompt("Introdueix el dia d'avui en nombres : ","");
+        var mes = prompt("Ara introdueix el mes. ","");
+        var any = prompt("Per acabar introdueix l'any.","");
+
+        if( dia == 25 && mes == 12 && any == 2020){
+            document.write("Avui és nadal!");
+        }
+
+        document.write("<hr>");
+
+        /* B) Enter three different numbers and if all of them are less than 10 print the message "All the numbers are less than 10".*/
+
+        document.write("Apartat B). </br>");
+
+        var num1 = prompt("Introdueix el 1r nombre :","");
+        var num2 = prompt("Introdueix el 2n nombre :","");
+        var num3 = prompt("Introdueix el 3r nombre :","");
+
+        num1 = parseInt(num1);
+        num2 = parseInt(num2);
+        num3 = parseInt(num3);
+
+
+        if(num1 < 10 && num2 < 10 && num3 < 10){
+            document.write(" Tant el 1r nombre ( " + num1 + " ) , com el 2n ( " + num2 + " ) , com el 3r ( " + num3 
+             + " ) són menors que 10."  );
+        }
+
+        document.write("<hr>");
+
+        /* C) Enter two numbers representing a coordinate point (x, y) and then print a message informing 
+        about where the point is placed:
+
+        "First Quadrant" if x > 0 and y > 0.
+        "Second Quadrant" if x < 0 and y > 0.
+        "Third Quadrant" if x < 0 and y < 0.
+        "Fourth Quadrant" if x > 0 and y < 0. */
+
+        document.write("Apartat C). </br>");
+
+        var x = prompt("Introdueix les coordenades d'un punt, X : ","");
+        var y = prompt("Ara introdueix Y : ","");
+
+        if( x > 0 && y > 0){
+            document.write("First Quadrant!");
+        }else if(x < 0 && y > 0){
+            document.write("Second Quadrant");
+        }else if( x < 0 && y < 0){
+            document.write("Third Quadrant");
+        }else{
+            document.write("Fourth Quadrant");
+        }
+        
+        document.write("<hr>");
+
+        /* D) Enter two numbers representing the worker's salary and years in the company,
+             calculate and print the salary of the next year according to the following conditions:
+
+        If the salary is less than 500€ and the years are more or equal to 10 then the salary increment is 20%.
+        If the salary is less than 500€ but the years are less than 10 then the salary increment is 5%.
+        If the salary is bigger or equal to 500€ then there is no salary increment. */
+
+        document.write("Apartat D). </br>");
+
+        var salari = prompt("Introdueix el teu salari : ","");
+        var anys = prompt("Introdueix els anys que dus treballant a l'empresa: ");
+
+        salari = parseInt(salari);
+
+        if(salari < 500 && anys > 10){
+           document.write(salari + (salari * 0.2));
+        }else if( salari < 500 && anys < 10 ){
+            document.write(salari + (salari * 0.05));
+        }else{
+            document.write(salari);
+        }
+
+        document.write("<hr>");
+
+        /* E) Enter three different numbers and if at least one of them is less than 10 print the message "Some numbers are less than 10".*/
+
+        document.write("Apartat E). </br>");
+
+        
+
+
+
+    </script>
+</body>
+</html>

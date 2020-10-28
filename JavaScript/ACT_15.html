@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Activitat 15, Amanda Mula. </title>
+        <meta charset="utf-8">
+        <script>
+            function mostrarTrimestre(){
+
+                var dia = new Date()
+                var mes = dia.getMonth() + 1;
+                if(mes == 1 || mes == 2 || mes == 3){
+                    document.write("Avui esteim al 1r Trimestre de l'any.");
+                }else if(mes == 4 || mes == 5 || mes == 6){
+                    document.write("Avui esteim al 2n Trimestre de l'any.");
+                }else if(mes == 7 || mes == 8 || mes == 9){
+                    document.write("Avui esteim al 3r Trimestre de l'any.");
+                }else{
+                    document.write("Avui esteim al 4t Trimestre de l'any.");
+                }
+
+
+            }
+        </script>
+    </head>
+    <body>
+        <script>
+                mostrarTrimestre();
+        </script>
+    </body>
+</html>

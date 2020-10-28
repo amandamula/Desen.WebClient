@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Activitat 27, Amanda Mula. </title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            /* A). Highlight the row of a table when the mouse cursor is over.*/
+            function pintar(a,colr){
+                a.bgColor = colr;
+            }
+
+
+        </script>
+        <table border="1">
+            <caption>Classificació Lliga</caption>
+            <tr onMouseOver="pintar(this,'#008F39')" onMouseOut="pintar(this,'#ffffff')">
+                <th>Posició</th>
+                <th>Equip</th>
+                <th>Punts</th>
+            </tr>
+            <tr onMouseOver="pintar(this,'#ff0000')" onMouseOut="pintar(this,'#ffffff')">
+                <td>1</td>
+                <td>Barcelona</td>
+                <td> 39 </td>
+            </tr>
+            <tr onMouseOver="pintar(this,'#ff0000')" onMouseOut="pintar(this,'#ffffff')">
+                <td>2</td>
+                <td>Real Madrid</td>
+                <td>37</td>
+            </tr>
+            <tr onMouseOver="pintar(this,'#ff0000')" onMouseOut="pintar(this,'#ffffff')">
+                <td>3</td>
+                <td>Sevilla</td>
+                <td>34</td>
+            </tr>
+            <tr onMouseOver="pintar(this,'#ff0000')" onMouseOut="pintar(this,'#ffffff')">
+                <td>4</td>
+                <td>Atlètic Madrid</td>
+                <td>32</td>
+            </tr>
+            <tr onMouseOver="pintar(this,'#ff0000')" onMouseOut="pintar(this,'#ffffff')">
+                <td>5</td>
+                <td>Real Sociedad</td>
+                <td>31</td>
+            </tr>
+        </table >
+    </body>
+</html>

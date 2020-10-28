@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Activitat 19, Amanda Mula. </title>
+        <meta charset="utf-8">
+    </head>
+    <body> 
+        <!-- A). Press on three different buttons, every button labelled with numbers 1, 2 and 3 respectively. 
+        When we press on a button a message alert must show the pressed number. -->  
+        <button id="b1" onclick="pitjarBoto1()"> BOTO 1</button>
+        <button id="b2" onclick="pitjarBoto2()"> BOTO 2</button>
+        <button id="b3" onclick="pitjarBoto3()"> BOTO 3</button>
+        <script>
+
+            function pitjarBoto1(){
+                var x = document.getElementById("b1").textContent;
+                alert("Has pitjat : " + x);
+            }
+            function pitjarBoto2(){
+                var x = document.getElementById("b2").textContent;
+                alert("Has pitjat : " + x);
+            }
+            function pitjarBoto3(){
+                var x = document.getElementById("b3").textContent;
+                alert("Has pitjat : " + x);
+            }
+
+
+        </script>
+    </body>
+</html>

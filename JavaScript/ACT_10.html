@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Activitat 10, Amanda Mula. </title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+        /* A). Enter one of the following words (house, table, dog, cat) and then print the translation into Spanish or Catalan.*/
+
+            document.write("Apartat A). </br>");
+        
+            var num = 1;
+            while (num <= 50) {
+                document.write(num + "  ");
+                num++;
+            }
+            
+            document.write("</br>");
+
+            var num2 = 50;
+            while (num2 >= 1) {
+                document.write(num2 + "  ");
+                num2--;
+            }
+
+            document.write("</br>")
+
+            var num3 = -50;
+            while (num3 <= 0) {
+                document.write(num3 + "  ");
+                num3++;
+            }
+
+            document.write("<hr>");
+
+        /* B) Print the pair numbers from 2 to 100 (2, 4, 6, ...98, 100).*/
+            document.write("Apartat B). </br>");
+        
+            var x = 2;
+            while (x <= 100) {
+                if (x % 2 == 0) {
+                    document.write(x + "  ");
+                }
+                x++;
+            }
+
+            document.write("<hr>");
+
+        /* C) Print 25 numbers in the series 11, 22, 33, 44...*/
+
+            document.write("Apartat C). </br>");
+        
+            var y = 11;
+            var multiplicador = 1;
+            var contador = 0;
+
+            while(contador <= 25){
+                document.write( y * multiplicador + " ");
+                multiplicador++;
+                contador++;
+                
+            }
+
+            document.write("<hr>");
+
+        /* D) Print the 7 multiples from 7 to 70 (7, 14, 21, ..., 63, 70).*/
+
+            document.write("Apartat D). </br>");
+
+            var multiples = 7;
+
+            while (multiples <= 70) {
+                document.write(multiples + "  ");
+                multiples = multiples + 7;
+            }
+
+
+            document.write("<hr>");
+
+        /* E) Enter 10 students' marks and then print how many students have passed and how many students have failed.*/
+
+            document.write("Apartat E). </br>");
+            
+            var numAlumnes = 1;
+            var contadorAprovats = 0;
+            var contadorSuspesos = 0;
+            while(numAlumnes <= 10){
+                var nota = prompt("Introdueix la teva nota : ","");
+
+                if(nota >= 5){
+                    contadorAprovats++;
+                }else{
+                    contadorSuspesos++;
+                }
+
+                numAlumnes++;
+            }
+
+            document.write("El nombre d'Aprovats és : " + contadorAprovats + "<br>");
+            document.write("El nombre de suspesos és : " + contadorSuspesos);
+
+            document.write("<hr>");
+
+        /* F) Enter 5 people heights and then print the average height.*/
+
+            document.write("Apartat F). </br>");
+
+            var numPersones = 1;
+            var sumaAlt = 0;
+            
+            while (numPersones <= 5) {
+                var altura = prompt("Introdueix la teva altura : ", "");
+                altura = parseFloat(altura);
+                sumaAlt = sumaAlt + altura;
+                numPersones++;
+            }
+
+            var mitja = sumaAlt / 5;
+
+            document.write("La mitjana de les altures és : " + mitja);
+            document.write("<hr>");
+
+        /* G) Enter 5 workers' salaries in a company, and then print how many workers' salaries are between 500€ and 1000€, 
+        how many workers' salaries are bigger than 1000€ and the sum of all the salaries.*/
+
+            document.write("Apartat G). </br>");
+
+            
+            var numTreballador = 1;
+            var salariAlt = 0;
+            var salariBaix = 0;
+            var sumaSalari = 0;
+
+            while (numTreballador <= 5) {
+                var salari = prompt("Introdueix el teu salari: ", "");
+                salari = parseInt(salari);
+                
+
+                if (salari >= 500 && salari <= 1000) {
+                    salariAlt++;
+                } else if (salari > 1000) {
+                    salariBaix++;
+                }
+
+                sumaSalari = sumaSalari + salari;
+                numTreballador++;
+
+            }
+            document.write("Hi ha " + salariAlt + " treballadors que el seu salari és entre 500 i 1000.");
+            document.write("<br>");
+            document.write("Hi ha " + salariBaix + " treballadors que el seu saleri és més de 1000.");
+            document.write("<br>");
+            document.write("La suma dels salaris és de : " + sumaSalari);
+
+            document.write("<hr>");
+
+        /* H) Enter 2 lists of 3 numbers every one, and print what list has a bigger sum. You can use two or more nested 
+        repetitive structures.*/
+
+            document.write("Apartat H). </br>");
+
+            var sumes = 1;
+            var suma1 = 0;
+            var suma2 = 0;
+
+            while (sumes <= 3) {
+                var num = prompt("Introdueix el nombre de la 1r Llista : ","");
+                num = parseInt(num);
+                suma1 = num + suma1;
+                sumes++;
+            }
+
+            sumes = 1;
+
+            while (sumes <= 3) {
+                var num = prompt("Introdueix el nombre de la 2n Llista : ", "");
+                num = parseInt(num);
+                suma2 = num + suma2;
+                sumes++;
+            }
+
+            if (suma1 > suma2) {
+                document.write("La primera llista té la suma més gran.");
+            } else {
+                document.write("La segona llista té la suma més gran.");
+            }
+            
+            document.write("<hr>");
+
+        /* I) Enter 5 numbers and then print how many numbers are pair and how many numbers are odd. Use the operator %.*/
+
+            document.write("Apartat I). </br>");
+
+            var par = 0;
+            var impar = 0;
+            var contador = 0;
+
+            while(contador < 5){
+                var num = prompt("Introdueix un nombre:  ", "");
+                
+                if(num % 2 == 0){
+                    par++;
+                }else{
+                    impar++;
+                }
+                contador++;
+
+            }
+
+            document.write("Hi ha " + par + " nombres pars. <br>");
+            document.write(" I " + impar + " nombres impars.");
+
+            document.write("<hr>");
+
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        ACT 07; Amanda Mula.
+    </title>
+</head>
+<body>
+    <script>
+/* A) Enter three different numbers and print the biggest one (maximum).*/
+
+document.write(" Apartat A). </br>");
+
+var num1 = prompt("Introdueix el 1r nombre :","");
+var num2 = prompt("Introdueix el 2n nombre :","");
+var num3 = prompt("Introdueix el 3r nombre :","");
+
+num1 = parseInt(num1);
+num2 = parseInt(num2);
+num3 = parseInt(num3);
+
+if(num1 > num2){
+    if(num1 > num3){
+        document.write("El nombre més gran és : " + num1);
+    }else{
+        document.write("El nombre més gran és : " + num3);
+    }
+}else{
+    if(num2 > num3){
+        document.write("El nombre més gran és : " + num2);
+    }else{
+        document.write("El nombre més gran és : " + num3);
+    }
+}
+
+document.write("<hr>");
+
+/* B) Enter three different numbers and print the smallest one (minimum).*/
+
+document.write(" Apartat B). </br>");
+
+if(num1 < num2){
+    if(num1 < num3){
+        document.write("El nombre més petit és : " + num1);
+    }else{
+        document.write("El nombre més petit és : " + num3);
+    }
+}else{
+    if(num2 < num3){
+        document.write("El nombre més petit és : " + num2);
+    }else{
+        document.write("El nombre més petit és : " + num3);
+    }
+}
+
+document.write("<hr>");
+
+/* C) Enter an integer number between (0 and 999), and print a message informing about how many digits it has (1, 2 or 3).*/
+
+document.write(" Apartat C). </br>");
+
+var integer = prompt("Escriu un nombre enter entre 0 i 999: ","");
+
+document.write("El nombre " + integer + " té " + integer.length + " digits.");
+
+document.write("<hr>");
+
+
+/* D) Enter an integer number and print the message "Positive Number", "Negative Number" or "Zero" in every case.*/
+
+document.write(" Apartat D). </br>");
+
+var nombre = prompt("Introduex un nombre enter: ","");
+nombre = parseInt(nombre);
+
+if( nombre > 0){
+    document.write("El nombre " + nombre + " és un nombre positiu.");
+}else if( nombre == 0){
+    document.write("El nombre és 0.");
+}else{
+    document.write("El nombre " + nombre + " és un nombre negatiu.");
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Activitat 21, Amanda Mula. </title>
+        <meta charset="utf-8">
+    </head>
+    <body> 
+        <!-- a) Enter a password into 2 PASSWORD fields, and then when you press a check button an alert message must appear. 
+            This message should inform us if the passwords are equal or not. -->  
+
+        <p>Apartat A).</p> </br>
+
+        <form>
+            Escriu la teva contrasenya : <input type="password" id="item1"/>
+            Repeteix la teva contrasenya : <input type="password" id="item2"/>
+            <button id ="b1" onclick="sonIguals()"> Enviar </button>
+            <hr>
+        </form>
+
+        <script>
+
+            function sonIguals(){
+
+                var x = document.getElementById("item1").value;
+                var y = document.getElementById("item2").value;
+                
+                if( x == y){
+                    alert("Són iguals.");
+                }else{
+                    alert("No són iguals.");
+                }
+            }
+
+        </script>
+    </body>
+</html>

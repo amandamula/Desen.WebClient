@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Activitat 18 E, Amanda Mula. </title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+        /* E). Enter a word, and then:
+                Print its first half part.
+                Print the last char.
+                Print it in reverse order.
+                Print every char separated by a white space.
+                Print how many vowels are in the word.*/
+
+                var paraula = prompt("Introdueix una paraula : ","");
+
+                var mida = paraula.length / 2;
+                var paraulaAlreves = paraula.split("");
+                paraulaAlreves = paraulaAlreves.reverse();
+                var paraulaFinal ="";
+                var paraulaAmbEspais ="";
+                var contadorVocals = 0;
+
+                for(var i = 0; i < paraulaAlreves.length; i++){
+
+                    paraulaFinal += paraulaAlreves[i];
+                }
+
+                for(var i = 0; i < paraula.length; i++){
+
+                    paraulaAmbEspais += paraula.charAt(i) + " ";
+
+                    if(paraula.charAt(i) == "a" || paraula.charAt(i) == "e" || paraula.charAt(i) == "i" ||
+                     paraula.charAt(i) == "o" || paraula.charAt(i) == "u"){
+                         contadorVocals++;
+                     }
+                }
+
+                document.write("Apartat E). </br>");
+                
+                document.write("La primera meitat de la paraula és : " + paraula.substr(0,mida) + ".<br>");
+                document.write("La darrera lletra és : " + paraula.charAt(paraula.length - 1) +".<br>");
+                document.write("La paraula al reves és : " + paraulaFinal + ".<br>");
+                document.write("La paraula amb espais entre lletres : " + paraulaAmbEspais + ".<br>");
+                document.write("La paraula conté " + contadorVocals + " vocals.");
+
+                document.write("<hr>");
+          
+        </script>
+    </body>
+</html> 

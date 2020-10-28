@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Activitat 18 A, Amanda Mula. </title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+        /* A). Enter a series of names until you type "end". Then it must print how many names were typed.*/
+
+            var nom;
+            var contador = 0;
+
+            while(nom != "final"){
+
+                nom = prompt("Introdueix un nom : ","");
+                if(nom != "final"){
+                    contador++;
+                }
+                
+            }
+
+            document.write("Apartat A). </br>");
+            document.write("Has escrit " + contador + " noms.");
+            document.write("<hr>");
+        </script>
+    </body>
+</html> 

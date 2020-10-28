@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Activitat 12, Amanda Mula. </title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+        /* A). Enter the base B and height H of 3 triangles.
+         For each triangle it must calculate and print its area A= B*H/2 and how many triangles have an are bigger than 12.*/
+            document.write("Apartat A). </br>");
+
+            var major = "";
+
+            for (i = 1; i <= 3; i++) {
+                var base = prompt("Introdueix la base del triangle : " + i, "");
+                var altura = prompt("Introdueix l'altura del triangle : " + i, "");
+                var area = (base * altura) / 2;
+
+                document.write("L'area del triangle " + i + " és de " + area + "<br>");
+                if (area > 12) {
+                    major = major + i + "  ";
+                }
+            }
+
+            document.write("Els triangles amb area major que 12 són: " + major);
+
+            document.write("<hr>");
+
+        /* B). Enter 10 numbers and print the sum of the last 5 numbers. */
+            document.write("Apartat B). </br>");
+
+            var suma=0;
+
+            for(i=1;i<=10;i++){
+                var num=prompt("Introdueix un nombre : ");
+                num=parseFloat(num);
+
+                if(i > 5){
+                suma = suma + num;
+                }
+            }
+            document.write("La suma és : " + suma);
+            document.write("<hr>");
+
+        /* C). Print the 5 multiplication table (from 5 to 50).*/
+            document.write("Apartat C). </br>");
+
+            for (i = 1; i <= 10; i++) {
+                document.write("5 * " + i + " = " + (i * 5) + "<br>");
+            }
+
+            document.write("<hr>");
+
+        /* D). Enter a number N and print its multiplication table (from N to N*10).*/
+            document.write("Apartat D). </br>");
+
+            var num = prompt("Introdueix un numero: ", "");
+            
+            for (i = 1; i <= 10; i++) {
+                document.write(num + " * " + i + " = " + (num * i) + "<br>");
+            }
+
+            document.write("<hr>");
+
+        /* E). Enter the sides of 4 triangles, and inform about:
+                For each triangle, what kind of triangle : equilateral (three equal sides), isosceles (two equal sides) 
+                or scalene (all different sides).
+                How many triangles for each kind.
+                What kind of triangle there are more of them?.*/
+            document.write("Apartat E). </br>");
+
+            var equilater = 0;
+            var isosceles = 0;
+            var escale = 0;
+
+            for (i = 0; i < 4; i++) {
+                var c1 = prompt("Introdueix la mida d'un dels costats: ", "");
+                var c2 = prompt("Introdueix la mida d'un dels costats: ", "");
+                var c3 = prompt("Introdueix la mida d'un dels costats: ", "");
+                if (c1 == c2) {
+                    if (c2 == c3) {
+                        equilater++;
+                    } else {
+                        isosceles++;
+                    }
+
+                }else if (c1 == c3) {
+                    if (c3 == c2) {
+                        equilater++;
+                    } else {
+                        isosceles++;
+                    } 
+
+                } else if (c2 == c3) {
+                    if (c3 == c1) {
+                        equilater++;
+                    } else {
+                        isosceles++;
+                    }
+
+                } else {
+                    escale++;
+                }
+            }
+
+            document.write("<br>");
+            document.write("Hi ha " + equilater + " triangles equilàters" + "<br>");
+            document.write("Hi ha " + isosceles + " triangles isòsceles" + "<br>");
+            document.write("Hi ha " + escale + " triangles escalè" + "<br>");
+
+            if (equilater > isosceles) {
+                if (equilater > escale) {
+                    document.write("Hi ha més triangles equilàters");
+                } else {
+                    document.write("Hi ha més triangles escalè");
+                }
+            } else if (isosceles > escale) {
+                document.write("Hi ha més triangles isòsceles");
+            } else {
+                document.write("Hi ha més triangles escalè");
+            }
+
+            document.write("<hr>");
+            
+        /* F). Enter 10 numbers and print ...
+                How many positive numbers are there?
+                How many negative numbers are there?
+                How many odd numbers are there?
+                What is the sum of the pair numbers?*/
+            document.write("Apartat F). </br>");
+
+            var negatiu = 0;
+            var positiu = 0;
+            var imparells = 0;
+            var sumaParells = 0;
+            var valorsIntroduits = "";
+
+            for (i = 0; i < 10; i++) {
+                var num = prompt("Introdueix un nombre: ", "");
+                num = parseFloat(num);
+
+                if (num % 2 == 0) {
+                    sumaParells = sumaParells + num;
+                } else {
+                    imparells++;
+                }
+
+                if (num > 0) {
+                    positiu++;
+                } else {
+                    negatiu++;
+                }
+
+                valorsIntroduits += (num + "  ");
+            }
+
+            document.write("Els valor instroduis són : "+ valorsIntroduits + "<br>");
+
+            document.write("Hi ha " + positiu + " nombres positius. <br>");
+            document.write("Hi ha " + negatiu + " nombres negatius. <br>");
+            document.write("Hi ha " + imparells + " nombres imparells. <br>");
+            document.write("La suma dels nombres parells és : " + sumaParells);
+
+            document.write("<hr>");
+
+        /* G). Enter the marks of students of three different classes 
+        (class A : 5 students, class B: 6 students, class C: 11 students) and print ...
+                The average of the marks for every class.
+                What is the class with the best average?*/
+
+            document.write("Apartat G). </br>");
+
+            var suma = 0;
+
+            for (i = 1; i <= 5; i++) {
+                var nota = prompt("Introdueix una de les notes de la classe A: ", "");
+                nota = parseFloat(nota);
+                suma += nota;
+            }
+
+            var mitja1 = (suma / 5);
+            mitja1 = parseFloat(mitja1);
+            suma = 0;
+
+            for (i = 1; i <= 6; i++) {
+                var nota = prompt("Introdueix una de les notes de la classe B: ", "");
+                nota = parseFloat(nota);
+                suma += nota;
+            }
+            var mitja2 = (suma / 6);
+            mitja2 = parseFloat(mitja2);
+            suma = 0;
+
+            for (i = 1; i <= 11; i++) {
+                var nota = prompt("Introdueix una de les notes de la classe C: ", "");
+                nota = parseFloat(nota);
+                suma += nota;
+            }
+
+            var mitja3 = (suma / 11);
+            mitja3 = parseFloat(mitja3);
+
+            document.write("La mitjana de les notes de la classe A és de : " + mitja1 + " , de la classe B és de : " + mitja2 + 
+            " , i,  el de la classe C és de : " + mitja3 + "<br>");
+
+            if (mitja1 > mitja2) {
+                if (mitja1 > mitja3) {
+                    document.write("La classe amb millor mitjana és la classe A.");
+                } else {
+                    document.write("La classe amb millor mitjana és la classe C.");
+                }
+
+            } else if (mitja2 > mitja3) {
+                document.write("La classe amb millor mitjana és la classe B.");
+            } else {
+                document.write("La classe amb millor mitjana és la classe C.");
+            }
+
+            document.write("<hr>");
+        </script>
+    </body>
+</html>

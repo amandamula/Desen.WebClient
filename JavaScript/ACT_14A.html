@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Activitat 14 A, Amanda Mula. </title>
+        <meta charset="utf-8">
+        <script>
+
+            /*A). Create a class called Addition with 2 attributes (valeu1 and value2) 
+            and three methods (loadValue1, loadValue2 and result). Try this class to do some additions.*/
+
+            // Classe Addition
+
+            function Addition(valor1,valor2){
+                this.valor1 = valor1;
+                this.valor2 = valor2;
+                this.loadValue1 = loadValue1;
+                this.loadValue2 = loadValue2;
+                this.result = result;
+
+                function loadValue1(v1){
+                    this.valor1 = parseInt(valor1) + parseInt(v1);
+                }
+
+                function loadValue2(v2){
+                    this.valor2 = parseInt(valor2) + parseInt(v2);
+                }
+
+                function result(){
+                    document.write(parseInt(this.valor1) + parseInt(this.valor2));
+                
+                }
+
+            }
+
+            
+
+        </script>
+    </head>
+    <body>
+        <script>
+            document.write("Apartat A). </br>");
+            var addition1;
+            addition1 = new Addition(5,4);
+            addition1.loadValue1(3);
+            addition1.loadValue2(4);
+            addition1.result();
+            document.write("<hr>");
+
+        </script>
+    </body>
+</html>
+
+ 
