@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> ACT 04 JQuery Amanda Mula. </title>
+    <meta charset="utf-8">
+    <script src="jquery-3.5.1.js"></script>
+</head>
+
+<body>
+    <!--A). Create a web page with two tables. Every table with 3 rows. 
+        And write a script using jQuery to change the background colour when you click on a row y in the first table, 
+        and to change the text size in the second table.-->
+
+    <h1> ACT 04 </h1>
+
+    <table id="taula1" border="1">
+        <tr>
+            <td> A1 </td>
+            <td> A2 </td>
+        </tr>
+        <tr>
+            <td> B1 </td>
+            <td> B2 </td>
+        </tr>
+        <tr>
+            <td> C1 </td>
+            <td> C2 </td>
+        </tr>
+    </table>
+    <hr/>
+    <table id="taula2" border="1">
+        <tr>
+            <td> A1 </td>
+            <td> A2 </td>
+        </tr>
+        <tr>
+            <td> B1 </td>
+            <td> B2 </td>
+        </tr>
+        <tr>
+            <td> C1 </td>
+            <td> C2 </td>
+        </tr>
+    </table>
+
+    <script>
+        $(document).ready(function() {
+            $("#taula1 tr").click(function() {
+                $("#taula1 tr").css("background-color", "purple");
+                $("#taula2 tr").css("font-size", "10em");
+            });
+
+        });
+    </script>
+</body>
+
+</html>
