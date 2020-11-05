@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> ACT 06 JQuery Amanda Mula. </title>
+    <meta charset="utf-8">
+    <script src="jquery-3.5.1.js"></script>
+</head>
+
+<body>
+    <h1> ACT 06 </h1>
+    <!--A).  Create a web page with two tables. Every table has 3 rows and 3 columns, and every cell has the same text "OFF".
+         When we press a button the text inside the first table must change to "ON", but the second table mustn’t change at all.. -->
+    <div id="div1">
+        <table id="t1" border="1">
+            <tr>
+                <td> OFF </td>
+                <td> OFF </td>
+                <td> OFF </td>
+            </tr>
+            <tr>
+                <td> OFF </td>
+                <td> OFF </td>
+                <td> OFF </td>
+            </tr>
+            <tr>
+                <td> OFF </td>
+                <td> OFF </td>
+                <td> OFF </td>
+            </tr>
+        </table>
+        <hr/>
+        <table id="t2" border="1">
+            <tr id="1">
+                <td> OFF </td>
+                <td> OFF </td>
+                <td> OFF </td>
+            </tr>
+            <tr id="2">
+                <td> OFF </td>
+                <td> OFF </td>
+                <td> OFF </td>
+            </tr>
+            <tr id="3">
+                <td> OFF </td>
+                <td> OFF </td>
+                <td> OFF </td>
+            </tr>
+        </table>
+        <hr/>
+        <button id="b1"> Canviar text 1r taula</button>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $("#b1").click(function() {
+                $("#t1 tr td").text("ON");
+            });
+
+        });
+    </script>
+</body>
+
+</html>

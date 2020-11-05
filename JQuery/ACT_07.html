@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> ACT 07 JQuery Amanda Mula. </title>
+    <meta charset="utf-8">
+    <script src="jquery-3.5.1.js"></script>
+    <style>
+        a {
+            text-decoration: none;
+            font-size: 15px;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <!--A). Create a web page with a link (<a>) with href property empty, and three buttons. 
+         Write a script using jQuery to set a different value for href property depending on the button we click on. -->
+
+    <h1> ACT 07 </h1>
+    <a id="a" href=""> LINK </a>
+    <hr/>
+    <button id="b1">URL 1</button>
+    <button id="b2">URL 2</button>
+    <button id="b3">URL 3</button>
+
+    <script>
+        $(document).ready(function() {
+            $("#b1").click(function() {
+                $("#a").attr("href", "https://github.com/amandamula/Desen.WebClient");
+            });
+            $("#b2").click(function() {
+                $("#a").attr("href", "https://www.google.es");
+            });
+            $("#b3").click(function() {
+                $("#a").attr("href", "https://www.youtube.es");
+            });
+
+        });
+    </script>
+</body>
+
+</html>

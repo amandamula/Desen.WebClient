@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> ACT 10 JQuery Amanda Mula. </title>
+    <meta charset="utf-8">
+    <script src="jquery-3.5.1.js"></script>
+</head>
+
+<body>
+    <!--A). Create a web page with some words using <strong> element. When you click on them, the words must be hidden. -->
+    <h1> ACT 10 </h1>
+
+    <strong id="s1"> HOLA </strong>
+    <br/>
+    <strong id="s2"> QUE </strong>
+    <br/>
+    <strong id="s3"> TAL </strong>
+
+    <script>
+        $(document).ready(function() {
+            $("strong").click(function() {
+                $(this).hide();
+            });
+
+
+        });
+    </script>
+</body>
+
+</html>

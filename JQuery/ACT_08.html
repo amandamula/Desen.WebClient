@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> ACT 08 JQuery Amanda Mula. </title>
+    <meta charset="utf-8">
+    <script src="jquery-3.5.1.js"></script>
+    <style>
+        #taula {
+            border-collapse: collapse;
+            font-size: 25px;
+        }
+        
+        table tr th {
+            border: 1px solid;
+        }
+        
+        table tr td {
+            border: 1px solid;
+        }
+        
+        .thead {
+            background-color: salmon;
+        }
+        
+        .tbody {
+            background-color: gray;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1> ACT 08 </h1>
+    <!--A). Create a web page with a table. Define two styles, 
+        one for the <thead> section and the other for the <tbody> section. Using two buttons link and unlink the two styles or classes. -->
+
+    <table id="taula">
+        <thead>
+            <tr>
+                <th> A1 </th>
+                <th> A2 </th>
+                <th> A3 </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> B1 </td>
+                <td> B2 </td>
+                <td> B3 </td>
+            </tr>
+            <tr>
+                <td> C1 </td>
+                <td> C2 </td>
+                <td> C3 </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr/>
+    <button id="b1"> Donar color al thead</button>
+    <button id="b2"> Llevar color al thead</button>
+    <br/><br/>
+    <button id="b3"> Donar color al tbody</button>
+    <button id="b4"> Llevar color al tbody</button>
+
+    <script>
+        $(document).ready(function() {
+            $("#b1").click(function() {
+                $("thead").addClass("thead");
+            });
+            $("#b2").click(function() {
+                $("thead").removeClass("thead");
+            });
+            $("#b3").click(function() {
+                $("tbody").addClass("tbody");
+            });
+            $("#b4").click(function() {
+                $("tbody").removeClass("tbody");
+            });
+
+
+        });
+    </script>
+</body>
+
+</html>

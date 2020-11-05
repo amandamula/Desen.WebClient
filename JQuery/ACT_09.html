@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> ACT 09 JQuery Amanda Mula. </title>
+    <meta charset="utf-8">
+    <script src="jquery-3.5.1.js"></script>
+
+</head>
+
+<body>
+    <!--A). Create a web page with two buttons. When you press on the first one, an alert box must 
+        appear showing all the content in the <head> section. And when you press on the second button, 
+            an alert box must appear showing all the content in the <body> sectio -->
+    <h1> ACT 09 </h1>
+
+
+    <button id="b1">MOSTRAR HEAD</button>
+    <button id="b2">MOSTRAR BODY</button>
+
+
+    <script>
+        $(document).ready(function() {
+            $("#b1").click(function() {
+                x = $("head").html();
+                alert(x);
+            });
+            $("#b2").click(function() {
+                y = $("body").html();
+                alert(y);
+            });
+
+
+        });
+    </script>
+</body>
+
+</html>
