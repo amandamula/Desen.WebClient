@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> ACT 12 JQuery Amanda Mula. </title>
+    <meta charset="utf-8">
+    <script src="jquery-3.5.1.js"></script>
+    <style>
+        #taula {
+            border-collapse: collapse;
+            font-size: 25px;
+        }
+        
+        table tr td {
+            border: 1px solid;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--A). Create a table with 2 rows and 2 columns. Change the colour of cells when the mouse cursor moves over and out. -->
+    <h1> ACT 12 </h1>
+    <table id="taula">
+
+        <tr>
+            <td> A1 </td>
+            <td> A2 </td>
+        </tr>
+
+
+        <tr>
+            <td> B1 </td>
+            <td> B2 </td>
+
+        </tr>
+
+    </table>
+
+
+
+    <script>
+        $(document).ready(function() {
+
+            $("table td").hover(enterMouse, exitMouse);
+
+
+            function enterMouse() {
+                $(this).css("background-color", "#fa8072");
+            }
+
+            function exitMouse() {
+                $(this).css("background-color", "#fff");
+            }
+
+
+        });
+    </script>
+</body>
+
+</html>

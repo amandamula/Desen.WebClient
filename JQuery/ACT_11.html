@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> ACT 11 JQuery Amanda Mula. </title>
+    <meta charset="utf-8">
+    <script src="jquery-3.5.1.js"></script>
+    <style>
+        #taula {
+            border-collapse: collapse;
+            font-size: 25px;
+        }
+        
+        table tr td {
+            border: 1px solid;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--A). Create a table with 2 rows and two columns. When you move the cursor over a cell, this must change its background colour, 
+        and when you move out the cursor from the cell, this must change to its original background colour. -->
+    <h1> ACT 11 </h1>
+    <table id="taula">
+
+        <tr>
+            <td> A1 </td>
+            <td> A2 </td>
+        </tr>
+
+
+        <tr>
+            <td> B1 </td>
+            <td> B2 </td>
+
+        </tr>
+
+    </table>
+
+
+
+    <script>
+        $(document).ready(function() {
+
+            $("table td").mouseover(function() {
+                $(this).css("background-color", "#fa8072");
+            });
+
+            $("table td").mouseout(function() {
+                $(this).css("background-color", "#fff");
+            });
+
+
+        });
+    </script>
+</body>
+
+</html>

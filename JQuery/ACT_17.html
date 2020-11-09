@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> ACT 17 JQuery Amanda Mula. </title>
+    <meta charset="utf-8">
+    <script src="jquery-3.5.1.js"></script>
+
+</head>
+
+<body>
+    <!--A). Create a form with a text field (input type="text"). 
+        When this field loses the focus and its content is empty, an alert message "Field can't be empty" must be shown..-->
+    <h1> ACT 17 </h1>
+
+
+    <input type="text" id="i1" value="nom">
+    <input type="text" id="i2" value="llinatges">
+
+
+
+    <script>
+        $(document).ready(function() {
+            $("#i1, #i2").blur(function() {
+                if (this.value == "") {
+                    alert("Field can't be empty");
+                }
+            });
+
+
+
+
+
+
+
+        });
+    </script>
+</body>
+
+</html>

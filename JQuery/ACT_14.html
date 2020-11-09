@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> ACT 14 JQuery Amanda Mula. </title>
+    <meta charset="utf-8">
+    <script src="jquery-3.5.1.js"></script>
+
+</head>
+
+<body>
+    <!--A). Create a web page with 2 buttons. When you press on a button, its background colour must change, 
+        and when you release the button, it must return to the original background colour.-->
+    <h1> ACT 14 </h1>
+
+
+    <button id="b1">Canviar de Color</button>
+
+
+    <script>
+        $(document).ready(function() {
+            x = $("#b1").css("background-color");
+
+            $("#b1").mousedown(function() {
+                $(this).css("background-color", "#fa8072")
+            });
+            $("#b1").mouseup(function() {
+                $(this).css("background-color", x);
+
+            });
+
+
+        });
+    </script>
+</body>
+
+</html>
