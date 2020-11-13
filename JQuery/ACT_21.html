@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> ACT 21 JQuery Amanda Mula. </title>
+    <meta charset="utf-8">
+    <script src="jquery-3.5.1.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <!--A). a) Create a div with some paragraphs. When you click on the div, its opacity must be reduced to 0.20. And when you double click on the div, its 
+    pacity must be increased to 1.-->
+    <h4> ACT 21 </h4>
+
+    <div id="div1">
+        <p id="p1">P1.1</p>
+        <p id="p2">P2.1</p>
+        <p id="p3">P3.1</p>
+        <p id="p4">P4.1</p>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $("#div1").click(function() {
+                $(this).fadeTo("slow", 0.2);
+            });
+            $("#div1").dblclick(function() {
+                $(this).fadeTo("slow", 1);
+            });
+        });
+    </script>
+</body>
+
+</html>

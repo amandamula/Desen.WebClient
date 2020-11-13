@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> ACT 18 JQuery Amanda Mula. </title>
+    <meta charset="utf-8">
+    <script src="jquery-3.5.1.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <!--A). Create a form where you can add and remove text fields. You can use a button to create new text fields. 
+        Every text field must have its particular button to remove itself.-->
+
+    <h1> ACT 18 </h1>
+    <h3> Items :</h3>
+
+    <div id="div">
+        <hr/>
+
+    </div>
+
+    <button class="btn btn-dark" id="bt1"> Afegir camps</button>
+    <button class="btn btn-dark" id="bt2"> Borrar tots els elements</button>
+
+
+
+
+    <script>
+        $(document).ready(function() {
+
+            var numDivs = 0;
+
+            $("#bt1").click(function() {
+                var nouDiv = $("<div/>").attr("id", "div" + numDivs);
+
+                var txt = $("<input/>", {
+                    type: 'text',
+                    id: 'input_' + numDivs
+                });
+
+                var b = $("<button/>", {
+                    id: 'boto_' + numDivs,
+                    text: 'Botó' + numDivs,
+                    click: function() {
+                        $(this).parent().remove();
+                    }
+                });
+
+                nouDiv.append(txt, b);
+                $("#div").append(nouDiv);
+
+                numDivs++;
+            });
+
+            $("#bt2").click(function() {
+                $("#div").empty();
+            });
+
+
+
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> ACT 22 JQuery Amanda Mula. </title>
+    <meta charset="utf-8">
+    <script src="jquery-3.5.1.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <!--A). Create a table with 1 row and 2 columns. 
+        There must be an image and a button in every cell. When you press on a button cell, its image visibility must change from visible to hidden and viceversa.-->
+    <h4> ACT 22 </h4>
+
+    <table>
+        <tr>
+            <td><img src="imatges/ind5.jpg" id="f1" style="width: 20%;"><button class="btn btn-dark" id="b1">Llevar/Mostrar FOTO1</td>
+            <td><img src="imatges/ind8.jpg" id="f2" style="width: 20%;"><button class="btn btn-dark" id="b2">Llevar/Mostrar FOTO2</td> 
+        </tr>   
+    </table>
+    <script>
+        $(document).ready(function() {
+            $("#b1").click(function() {
+                $("#f1").toggle();
+            });
+            $("#b2").click(function() {
+                $("#f2").toggle();
+            });
+        });
+    </script>
+</body>
+
+</html>
