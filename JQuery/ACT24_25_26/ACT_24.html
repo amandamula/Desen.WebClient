@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ACT 24 JQuery, Amanda Mula</title>
+    <script src="jquery-3.5.1.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        #text{
+            text-align: center;
+            border: 3px solid cadetblue;
+            height: 300px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+<!-- A). Write a Javascript script that loads the information from two different txt files (fiile1.txt, file2.txt)
+inside a div container using the jQuery load method depending on which of the buttons #button1 or #button2 is clicked.-->
+<div class="container">
+<div id="text">
+
+</div>
+    <br/>
+<button id="b1" class="btn btn-dark">Mostrar TEXT 1</button>
+<button id="b2" class="btn btn-dark">Mostrar TEXT 2</button>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $("#b1").click(function() {
+            $("#text").load("text1.txt");
+        });
+        $("#b2").click(function() {
+            $("#text").load("text2.txt");
+        });
+    });
+</script>
+
+</div>
+</body>
+</html>

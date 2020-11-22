@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#categoria" role="tab" aria-controls="categoria" aria-selected="true">Categoria</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#producte" role="tab" aria-controls="producte" aria-selected="false">Producte</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#compra" role="tab" aria-controls="compra" aria-selected="false">Compra</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="categoria" role="tabpanel" aria-labelledby="categoria-tab">
+            <div class="container">
+                <h4 style="margin-top: 2%;">Categoria :</h4>
+                <div class="row" style="margin-top: 2%;">
+                    <label class="control-label col-md-2">Nom de la Categoria </label>
+                    <div class="col-md-2">
+                        <input type="text" name="nomCategoria" id="nomCategoria" class="form-control">
+                    </div>
+                    <button id="bAfegir" class="btn btn-dark"> Afegir </button>
+                </div>
+                <br/>
+                <div class="form-row align-items-center">
+
+                    <label class="mr-sm-2 col-md-2" for="inlineFormCustomSelect">Selecciona una categoria</label>
+                    <div class="col-md-2">
+                        <select class="custom-select mr-sm-2 selectLlista" id="selectLlista">
+                            
+                        </select>
+                    </div>
+                    <div class="col-md-1">
+                        <button id="bModificar" class="btn btn-dark"> Guardar </button>
+                    </div>
+                    <button id="bBorrar" class="btn btn-dark"> Borrar </button>
+
+                </div>
+
+                <div id="contingut" style="margin-top: 2%;">
+
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="tab-pane fade" id="producte" role="tabpanel" aria-labelledby="producte-tab">
+            <div class="container">
+                <h4 style="margin-top: 2%;">Producte :</h4>
+                <div class="row" style="margin-top: 2%;">
+
+                    <label class="control-label col-md-1">Codi</label>
+                    <div class="col-md-2">
+                        <input type="text" name="codi" id="codi" class="form-control">
+                    </div>
+                    <label class="control-label col-md-1">Descripcio</label>
+                    <div class="col-md-2">
+                        <input type="text" name="desc" id="desc" class="form-control">
+                    </div>
+                </div>
+
+                <br/>
+                <div class="row">
+
+                    <label class="control-label col-md-1">Preu</label>
+                    <div class="col-md-2">
+                        <input type="text" name="preu" id="preu" class="form-control">
+                    </div>
+                    <label class="control-label col-md-1" for="inlineFormCustomSelect">Categoria</label>
+                    <div class="col-md-2">
+                        <select class="custom-select mr-sm-2 selectLlista" id="selectC">
+                            
+                        </select>
+                    </div>
+                    <div class="col-md-1">
+                        <button id="bAfegirP" class="btn btn-dark"> Afegir </button>
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+
+                    <label class="control-label col-md-2" for="inlineFormCustomSelect">Tria un Producte</label>
+                    <div class="col-md-2">
+                        <select class="custom-select mr-sm-2" id="sproducte">
+                            
+                        </select>
+                    </div>
+                    <div class="col-md-1">
+                        <button id="bModificarP" class="btn btn-dark"> Guardar </button>
+                    </div>
+                    <div class="col-md-1">
+                        <button id="bBorrarP" class="btn btn-dark"> Borrar </button>
+                    </div>
+                </div>
+
+                <div id="cont">
+                    <table id="taula" class="table table-striped" style="margin-top: 2%;">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Codi</th>
+                                <th>Descripció</th>
+                                <th>Preu</th>
+                                <th>Categoria</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="tab-pane fade" id="compra" role="tabpanel" aria-labelledby="compra-tab">
+            <div class="container">
+                <h4 style="margin-top: 2%;">Compra :</h4>
+                <div class="row" style="margin-top: 2%;">
+                    <label class="control-label col-md-1" for="inlineFormCustomSelect">Categoria</label>
+                    <div class="col-md-2">
+                        <select class="custom-select mr-sm-2 selectLlista" id="selectCat">
+                            
+                        </select>
+                    </div>
+                    <label class="control-label col-md-1" for="inlineFormCustomSelect">Producte</label>
+                    <div class="col-md-2">
+                        <select class="custom-select mr-sm-2 selectProducte" id="selectPro">
+                            
+                        </select>
+                    </div>
+                    <label class="control-label col-md-1" for="inlineFormCustomSelect">Quantitat</label>
+                    <div class="col-md-1">
+                        <select class="custom-select mr-sm-2" id="quant">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            
+                        </select>
+                    </div>
+                    <div class="col-md-1">
+                        <button id="bAfegirCarrito" class="btn btn-dark"> Afegir </button>
+                    </div>
+                    <div class="col-md-2">
+                        <button id="bBorrarCarrito" class="btn btn-dark"> Borrar Tot </button>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 2% ;">
+                    <label class="control-label col-md-1">Descompte (%)</label>
+                    <div class="col-md-2">
+                        <input type="text" name="preu" id="InputDesc" class="form-control">
+                    </div>
+                    <div class="col-md-1">
+                        <button id="bAplicar" class="btn btn-dark"> Aplicar </button>
+                    </div>
+                </div>
+                <div id="contCompra">
+                    <table id="taulaCompra" class="table table-striped" style="margin-top: 2%;">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Codi</th>
+                                <th>Descripció</th>
+                                <th>Preu</th>
+                                <th>Categoria</th>
+                                <th>Quantitat</th>
+                                <th>SubTotal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <table id="totals" class="table table-info">
+                        <tbody>
+                            <tr>
+                                <th colspan="5">
+                                    TOTAL
+                                </th>
+                                <td id="total"> 0 </td>
+                            </tr>
+                            <tr>
+                                <th id="d" colspan="5">
+                                    DESCOMPTE (%)
+                                </th>
+                                <td id="descompte"> 0 </td>
+                            </tr>
+                            <tr>
+                                <th colspan="5">
+                                    TOTAL - DESCOMPTE
+                                </th>
+                                <td id="totDesc"> 0 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+
+            //INICIAR CATEGORIA
+
+            var categories = ["Tecnologia", "Menjar", "Esports"];
+
+            function imprimirLlista() {
+                var llista = "<ul class=\"list-group\">";
+
+                for (i = 0; i < categories.length; i++) {
+                    llista += "<li class=\"list-group-item list-group-item-info\">" + categories[i] + "</li>";
+                }
+
+                llista += "</ul>";
+
+                return llista;
+            }
+
+
+            $("#contingut").html(imprimirLlista());
+
+            function catSelect() {
+                var options = "<option selected disabled>selecciona'n una</option>";
+
+                for (i = 0; i < categories.length; i++) {
+                    options += "<option>" + categories[i] + "</option>";
+                }
+
+                return options;
+            }
+
+            var opt = catSelect();
+
+            $(".selectLlista").append(opt);
+
+
+            //AFEGIR CATEGORIA
+
+            $("#bAfegir").click(function() {
+                var nom = $("#nomCategoria").val();
+
+                categories.push(nom);
+
+
+                $("#contingut").html(imprimirLlista());
+
+                var options = catSelect();
+
+                $(".selectLlista").empty().append(options);
+
+            });
+
+            //BORRAR CATEGORIA
+
+            $("#bBorrar").click(function() {
+
+                var seleccionat = $("#selectLlista").val();
+
+                var index = categories.indexOf(seleccionat);
+
+                categories.splice(index, 1);
+
+                imprimirLlista();
+
+                $("#contingut").empty().append(imprimirLlista());
+
+
+                $(".selectLlista").empty().append(catSelect());
+
+
+            });
+
+            //MODIFICAR CATEGORIA
+
+            $("#bModificar").click(function() {
+
+                var select = $("#selectLlista").val();
+                var nom = $("#nomCategoria").val();
+                var index = categories.indexOf(select);
+
+                categories[index] = nom;
+
+                $("#contingut").empty().append(imprimirLlista());
+
+
+                $(".selectLlista").empty().append(catSelect());
+
+            });
+
+            //INICIAR PRODUCTES
+
+            var p1 = ["1234", "Disk dur", "50.00", "Tecnologia"];
+            var p2 = ["1122", "ordenador Hp", "555.00", "Tecnologia"];
+            var p3 = ["2233", "Bocata", "5.15", "Menjar"];
+            var p4 = ["3344", "Macarrons", "3.25", "Menjar"];
+            var p5 = ["1111", "Pilota", "12.00", "Esports"];
+            var p6 = ["2222", "Deportives", "56.00", "Esports"];
+
+            var productes = [p1, p2, p3, p4, p5, p6];
+
+            function imprimirTaula() {
+
+                var taula = "<tr>";
+
+                for (i = 0; i < productes.length; i++) {
+
+                    for (x = 0; x < 4; x++) {
+                        taula += "<td>";
+                        taula += productes[i][x];
+                        taula += "</td>";
+                    }
+
+                    taula += "</tr>";
+                }
+
+
+
+                return taula;
+
+            }
+
+            var t = imprimirTaula();
+
+            $("#taula tbody").append(t);
+
+            function inserirOptionProducte(p) {
+
+                var options = "<option selected disabled>selecciona'n un</option>";
+
+                for (i = 0; i < p.length; i++) {
+                    options += "<option>" + p[i][1] + "</option>";
+                }
+
+                return options;
+            }
+
+            var opt = inserirOptionProducte(productes);
+
+            $("#sproducte").append(opt);
+
+            //AFEGIR PRODUCTE
+
+            $("#bAfegirP").click(function() {
+                var codi = $("#codi").val();
+                var desc = $("#desc").val();
+                var preu = $("#preu").val();
+                var cat = $("#selectC").val();
+
+
+                var producte = [codi, desc, preu, cat];
+
+                productes.push(producte);
+                var taulaAfegir = imprimirTaula();
+                $("#taula tbody").empty().append(taulaAfegir);
+
+                var opt = inserirOptionProducte(productes);
+                $("#sproducte").empty().append(opt);
+
+            });
+
+            // MODIFICAR PRODUCTE
+            $("#bModificarP").click(function() {
+                var codi = $("#codi").val();
+                var desc = $("#desc").val();
+                var preu = $("#preu").val();
+                var cat = $("#selectC").val();
+
+                var pro = $("#sproducte").val();
+
+                for (i = 0; i < productes.length; i++) {
+                    if (productes[i][1] == pro) {
+
+                        productes[i][0] = codi;
+                        productes[i][1] = desc;
+                        productes[i][2] = preu;
+                        productes[i][3] = cat;
+
+
+                    }
+                }
+
+                var novaTaula = imprimirTaula();
+                $("#taula tbody").empty().append(novaTaula);
+                var nouSelect = inserirOptionProducte(productes);
+                $("#sproducte").empty().append(nouSelect);
+            });
+
+            // BORRAR PRODUCTE
+            $("#bBorrarP").click(function() {
+                var pro = $("#sproducte").val();
+
+                for (i = 0; i < productes.length; i++) {
+                    if (productes[i][1] == pro) {
+                        productes.splice(i, 1);
+
+                    }
+                }
+
+                var novaTaula = imprimirTaula();
+                $("#taula tbody").empty().append(novaTaula);
+                var nouSelect = inserirOptionProducte(productes);
+                $("#sproducte").empty().append(nouSelect);
+
+            });
+
+            // INICIAR COMPRA
+
+
+
+            $("#selectCat").change(function() {
+                var prodSelect = [];
+                var categoria = $(this).val();
+
+
+                for (i = 0; i < productes.length; i++) {
+                    if (productes[i][3] == categoria) {
+                        prodSelect.push(productes[i]);
+                    }
+                }
+
+                var sPro = inserirOptionProducte(prodSelect);
+
+                $("#selectPro").empty().append(sPro);
+
+
+            });
+
+            // AFEGIR A LA CISTELLA
+            var total = 0;
+
+            $("#bAfegirCarrito").click(function() {
+
+                var producte = $("#selectPro").val();
+                var q = $("#quant").val();
+                var compra = [];
+
+
+                for (i = 0; i < productes.length; i++) {
+                    if (productes[i][1] == producte) {
+
+                        var suma = parseFloat(productes[i][2]) * parseFloat(q);
+                        var p = [productes[i][0], productes[i][1], productes[i][2], productes[i][3], q, suma];
+                        compra.push(p);
+
+
+                    }
+
+                }
+
+                var tau = "<tr>"
+
+                for (i = 0; i < compra.length; i++) {
+                    for (x = 0; x < 6; x++) {
+                        tau += "<td>";
+                        tau += compra[i][x];
+                        tau += "</td>";
+                    }
+                    tau += "</tr>";
+
+                    total = parseFloat(total) + parseFloat(compra[i][5]);
+
+                }
+
+                $("#taulaCompra tbody").eq(0).append(tau);
+                $("#total").empty().append(total);
+
+            });
+
+            // APLICAR DESCOMPTE
+
+            $("#bAplicar").click(function() {
+                var desc = $("#InputDesc").val();
+
+                $("#d").text("DESCOMPTE (" + desc + "%)");
+
+
+                var descompte = parseFloat(total) * (parseFloat(desc) / parseFloat(100));
+                $("#descompte").empty().append(descompte);
+                var totalDesc = parseFloat(total) - descompte;
+                $("#totDesc").empty().append(totalDesc);
+
+
+            });
+
+            // BORRAR TOT
+
+            $("#bBorrarCarrito").click(function() {
+                $("#taulaCompra tbody").empty();
+                $("#total").text(0);
+                $("#descompte").text(0);
+                $("#totDesc").text(0);
+            });
+
+
+
+
+        });
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

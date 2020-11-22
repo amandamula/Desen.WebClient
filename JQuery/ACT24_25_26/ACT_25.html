@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ACT 25 JQuery, Amanda Mula</title>
+    <script src="jquery-3.5.1.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+<!-- A).Write a Javascript script that uses 2 input text controls to enter the value of the 2 operands and 4 different buttons to perform the 4 basic arithmetic operations (addition, substraction, product and division).
+The data (2 operands and 1 operation) is sent to the server where the corresponding operation is calculated and returned using
+$.post or $.get function. The result is shown in a div.-->
+<div class="container">
+
+        <div class="row">
+            <label class="col-md-2"> 1r nombre: </label>
+            <div class="col-md-4">
+            <input type="text" name="num1" id="num1">
+            </div>
+        </div>
+        <div class="row">
+            <label class="col-md-2">2n nombre:</label>
+            <div class="col-md-4">
+            <input type="text" name="num2" id="num2">
+            </div>
+        </div>
+    <br/><br/>
+    <button id="b1" class="btn btn-dark">SUMAR</button>
+    <button id="b2" class="btn btn-dark"> RESTAR </button>
+    <button id="b3" class="btn btn-dark"> MULTIPLICAR </button>
+    <button id="b4" class="btn btn-dark"> DIVIDIR </button>
+
+        <br/><br/>
+
+
+    <div id="sol"></div>
+</div>
+<script>
+    $(document).ready(function() {
+
+
+        $("#b1").click(function() {
+            var x = $("#num1").val();
+            var y = $("#num2").val();
+            var z = $(this).attr("id");
+
+            $.get("ACT_25.php",{num1:x,num2:y,b1:z},imprimirDades);
+
+        });
+
+        $("#b2").click(function() {
+
+            var x = $("#num1").val();
+            var y = $("#num2").val();
+            var z = $(this).attr("id");
+
+            $.get("ACT_25.php",{num1:x,num2:y,b2:z},imprimirDades);
+        });
+
+        $("#b3").click(function() {
+
+            var x = $("#num1").val();
+            var y = $("#num2").val();
+            var z = $(this).attr("id");
+
+            $.get("ACT_25.php",{num1:x,num2:y,b3:z},imprimirDades);
+        });
+
+        $("#b4").click(function() {
+
+            var x = $("#num1").val();
+            var y = $("#num2").val();
+            var z = $(this).attr("id");
+
+            $.get("ACT_25.php",{num1:x,num2:y,b4:z},imprimirDades);
+        });
+
+        function imprimirDades(data){
+            $("#sol").html("RESULTAT : "  + data);
+        }
+
+
+    });
+</script>
+</body>
+</html>

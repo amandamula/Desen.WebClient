@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ACT 26 JQuery, Amanda Mula</title>
+    <script src="jquery-3.5.1.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+
+<!-- A).Write a Javascript script that uses a SELECT form field with various names of cities (MANACOR, PALMA, INCA, SOLLER; ...) to filter the information from a JSON file with the company workers information (name, age  and city).
+The filtered result must be shown in an unordered list UL. Use a JSON file as the following one. -->
+Tria una ciutat:
+
+<select id="city">
+    <option value="p">Palma</option>
+    <option value="m">Manacor</option>
+    <option value="i">Inca</option>
+    <option value="s">Soller</option>
+</select>
+<button id="b1" class="btn btn-dark"> FILTRAR</button>
+
+<div id="info">
+
+</div>
+<script>
+$(document).ready(function(){
+
+$("button").click(function(){
+
+var v = $("#city").val();
+
+$.getJSON("ACT_26.php", {p: v}, imprimirDades);
+
+
+});
+
+function imprimirDades(data){
+
+        $("#info").html(data);
+}
+
+});
+</script>
+
+</body>
+</html>
