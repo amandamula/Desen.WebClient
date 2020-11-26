@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BIBLIOTECA>
+    <LLIBRES>
+        <LLIBRE>
+            <ISBN>1111</ISBN>
+            <TITOL>La sombra del viento</TITOL>
+            <AUTOR>1</AUTOR>
+            <GENERE>Narrativa</GENERE>
+            <PAGINES>536</PAGINES>
+            <ANY_PUBL>2001</ANY_PUBL>
+        </LLIBRE>
+        <LLIBRE>
+            <ISBN>1112</ISBN>
+            <TITOL>El juego del angel</TITOL>
+            <AUTOR>1</AUTOR>
+            <GENERE>Narrativa</GENERE>
+            <PAGINES>872</PAGINES>
+            <ANY_PUBL>2008</ANY_PUBL>
+        </LLIBRE>
+         <LLIBRE>
+            <ISBN>1113</ISBN>
+            <TITOL>Patria</TITOL>
+            <AUTOR>2</AUTOR>
+            <GENERE>Narrativa</GENERE>
+            <PAGINES>696</PAGINES>
+            <ANY_PUBL>2016</ANY_PUBL>
+        </LLIBRE>
+        <LLIBRE>
+            <ISBN>1114</ISBN>
+            <TITOL>No vine a ser carne</TITOL>
+            <AUTOR>3</AUTOR>
+            <GENERE>Poesia</GENERE>
+            <PAGINES>128</PAGINES>
+            <ANY_PUBL>2020</ANY_PUBL>
+        </LLIBRE>
+        <LLIBRE>
+            <ISBN>1115</ISBN>
+            <TITOL>Baluarte</TITOL>
+            <AUTOR>4</AUTOR>
+            <GENERE>Poesia</GENERE>
+            <PAGINES>100</PAGINES>
+            <ANY_PUBL>2014</ANY_PUBL>
+        </LLIBRE>
+        <LLIBRE>
+            <ISBN>1116</ISBN>
+            <TITOL>Rayuela</TITOL>
+            <AUTOR>5</AUTOR>
+            <GENERE>Narrativa</GENERE>
+            <PAGINES>755</PAGINES>
+            <ANY_PUBL>1963</ANY_PUBL>
+        </LLIBRE>
+
+        
+    </LLIBRES>
+    <AUTORS>
+        <AUTOR>
+            <ID>1</ID>
+            <NOM>Carlos</NOM>
+            <LLINATGES>Ruiz Zafón</LLINATGES>
+            <NACIONALITAT>Espanyola</NACIONALITAT>
+        </AUTOR>
+        <AUTOR>
+            <ID>2</ID>
+            <NOM>Fernando</NOM>
+            <LLINATGES>Aramburu</LLINATGES>
+            <NACIONALITAT>Espanyola</NACIONALITAT>
+        </AUTOR>
+        <AUTOR>
+            <ID>3</ID>
+            <NOM>Gata</NOM>
+            <LLINATGES>Cattana</LLINATGES>
+            <NACIONALITAT>Espanyola</NACIONALITAT>
+        </AUTOR>
+        <AUTOR>
+            <ID>4</ID>
+            <NOM>Elvira</NOM>
+            <LLINATGES>Sastre</LLINATGES>
+            <NACIONALITAT>Espanyola</NACIONALITAT>
+        </AUTOR>
+        <AUTOR>
+            <ID>5</ID>
+            <NOM>Julio</NOM>
+            <LLINATGES>Cortázar</LLINATGES>
+            <NACIONALITAT>Argentina</NACIONALITAT>
+        </AUTOR>
+
+
+    </AUTORS>
+
+
+</BIBLIOTECA>

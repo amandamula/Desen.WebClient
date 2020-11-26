@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Biblioteca, Amanda Mula</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<button type="button" onclick="loadXML()">Veure Llibres</button>
+<br/><br/>
+<table id="contingut">
+
+</table>
+<script>
+    function loadXML() {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                myFunction(this);
+            }
+        };
+        xmlhttp.open("GET", "biblioteca.xml", true);
+        xmlhttp.send();
+    }
+
+    function myFunction(xml) {
+        var i;
+        var xmlDoc = xml.responseXML;
+        var table="<tr><th>Titol</th><th>Genere</th></tr>";
+        var x = xmlDoc.getElementsByTagName("LLIBRE");
+        for (i = 0; i <x.length; i++) {
+            console.log(x[i]);
+            table += "<tr><td>" +
+                x[i].getElementsByTagName("TITOL")[0].childNodes[0].nodeValue +
+                "</td><td>" +
+                x[i].getElementsByTagName("GENERE")[0].childNodes[0].nodeValue +
+                "</td></tr>";
+        }
+        document.getElementById("contingut").innerHTML = table;
+    }
+</script>
+</body>
+</html>
