@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Taula JSON, Amanda Mula</title>
+</head>
+<body>
+<div class="container">
+    <h1>LLista Autors</h1>
+    <ul id="Llista" class="list-group">
+    </ul>
+    <br/>
+
+</div>
+</body>
+<script>
+    $(document).ready(function(){
+
+
+        function carregarllista() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    $("#demo").html(this.responseText);
+                    var autors = JSON.parse(this.responseText);
+                    for (a in autors) {
+                        var id = autors[a].idautor;
+                        var nom = autors[a].nom;
+                        var lli = autors[a].llinatges;
+                        var url = "llibres.php?autor="+id;
+                        var item = $("<a/>", {href:url,class:'list-group-item list-group-item-info', text:nom + " " + lli});
+                        $("#Llista").append(item);
+                    }
+                }
+            };
+            xhttp.open("GET", "autors.php", true);
+            xhttp.send();
+        }
+
+        carregarllista();
+
+    });
+</script>
+</html>
