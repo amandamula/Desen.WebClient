@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Carousel, Amanda Mula</title>
+</head>
+<body>
+
+<!-- CAROUSEL -->
+
+<div class="container">
+    <h1 style="text-align: center">Carousel Llibres</h1>
+    <div id="carouselLlibres" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators"></ol>
+        <div class="carousel-inner"></div>
+
+    </div>
+    <br/>
+</div>
+
+
+<!--CARDS -->
+
+<div id="cardsLli" class="container">
+    <h2 style="text-align: center">Cards Llibres :</h2>
+    <hr/>
+</div>
+
+
+<script>
+    $(document).ready(function(){
+
+        function carregarFotos() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var fotos = JSON.parse(this.responseText);
+                    for (var i=2; i<fotos.length; i++) {
+                        var num = i-2;
+
+                        // Afegir LIs
+                        var nouLI = $("<li/>");
+                        nouLI.attr("data-target","#carouselLlibres");
+                        nouLI.attr("data-slide-to",num);
+                        if(num==0){
+                            nouLI.addClass("active");
+                        }
+                        $("#carouselLlibres").children("ol").append(nouLI);
+
+                        // Afegir DIVs
+                        var nouDIV = $("<div/>");
+                        nouDIV.addClass("carousel-item");
+                        if(num==0){
+                            nouDIV.addClass("active");
+                        }
+                        var foto = "img/"+fotos[i];
+                        var nouIMG = $("<img/>",{src:foto, alt:foto});
+                        nouIMG.addClass("d-block w-25");
+                        nouDIV.append(nouIMG);
+                        $("#carouselLlibres").children("div").append(nouDIV);
+
+                    }
+                }
+            };
+            xhttp.open("GET", "carousel.php", true);
+            xhttp.send();
+        }
+
+
+        function carregarCards() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var llibres = JSON.parse(this.responseText);
+                    var i=0;
+                    for (ll in llibres) {
+
+
+                        if(i==4){
+                            i=0;
+                        }
+                        if(i == 0){
+                            var rowDIV = $("<div/>",{class:"row",});
+                            $("#cardsLli").append(rowDIV);
+                        }
+                        i++;
+
+                        var isbn = llibres[ll].ISBN;
+                        var titol = llibres[ll].titol;
+                        var foto = "img/"+llibres[ll].img;
+                        var any = llibres[ll].anyPublicacio;
+                        var pag = llibres[ll].numPag + " pàgines";
+                        var url = "cards.php?isbn="+isbn;
+
+                        var colDIV = $("<div/>",{class:"col-sm-3"});
+                        var cardDIV = $("<div/>", {class:"card"});
+                        var cardIMG = $("<img/>",{class:"card-img-top", src:foto, alt:"card image", style:"width:100%"});
+                        cardDIV.append(cardIMG);
+                        var cardBody = $("<div/>",{class:"card-body"});
+                        var cardH4 = $("<h4/>",{class:"card-title", text:titol +", " + any});
+                        var cardP = $("<p/>",{class:"card-text", text:pag});
+                        var cardA = $("<a/>",{class:"btn btn-dark", href:url, text:"Veure Llibre"});
+                        cardBody.append(cardH4, cardP, cardA);
+                        cardDIV.append(cardBody);
+                        //var br = $("<br/>");
+                        colDIV.append(cardDIV);
+                        rowDIV.append(colDIV);
+                    }
+                }
+            };
+            xhttp.open("GET", "cards.php", true);
+            xhttp.send();
+        }
+
+
+
+        carregarFotos();
+        carregarCards();
+
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+</body>
+</html>
