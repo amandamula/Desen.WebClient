@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container">
+        <h4 style="margin-top: 2%;">Llibreria :</h4>
+        <div class="row" style="margin-top: 2%;">
+            <label class="control-label col-md-2">Títol </label>
+            <div class="col-md-2">
+                <input type="text" name="titol" id="titol" class="form-control">
+            </div>
+            <label class="control-label col-md-2">Num Pàgines </label>
+            <div class="col-md-2">
+                <input type="text" name="numP" id="numP" class="form-control"></div>
+
+        </div>
+        <br/>
+        <div class="row">
+
+            <label class="mr-sm-2 col-md-2" for="inlineFormCustomSelect">Selecciona una categoria</label>
+            <div class="col-md-2">
+                <select class="custom-select mr-sm-2 " id="categoria">
+                    <option value="CLASSIC">CLASSIC</option>
+                    <option value="SCIENCE">SCIENCE</option>
+                    <option value="SPORTS">SPORTS</option>
+                    <option value="COMEDY">COMEDY</option>
+                    
+                </select>
+            </div>
+            <label class="control-label col-md-2">Posició (COL/ROW) </label>
+            <div class="col-md-1">
+                <select id="col" class="custom-select">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+            <div class="col-md-1">
+                <select id="fila" class="custom-select">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <button id="bAfegir" class="btn btn-dark"> Afegir Llibre </button>
+            </div>
+            <div class="col-md-2">
+                <button id="bBorrar" class="btn btn-dark"> Borrar Llibre </button>
+            </div>
+            <div class="col-md-2">
+                <button id="bLlistar" class="btn btn-dark">Llistar Llibres </button>
+            </div>
+            <div class="col-md-2">
+                <button id="bTaula" class="btn btn-dark"> Mostar Taula </button>
+            </div>
+            <div class="col-md-2">
+                <button id="bNumLlibres" class="btn btn-dark"> Num Llibres </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="contingut" style="text-align: center; margin-top: 5%;"></div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <script>
+        // Classe Llibre
+
+        function Llibre(titol, nump, cat, col, fila) {
+
+            this.titol = titol;
+            this.numpagines = nump;
+            this.categoria = cat;
+            this.columna = col;
+            this.fila = fila;
+
+
+        }
+
+        //Array Llibres
+
+        var llibres = new Array();
+
+        $(document).ready(function() {
+
+
+            //Funció comprovar casella
+
+            function comprovarOcupat(col, fila) {
+                var ocupat = false;
+
+                for (var i = 0; i < llibres.length; i++) {
+                    var lli = llibres[i];
+
+                    if (col == lli.columna && lli.fila == fila) {
+                        ocupat = true;
+                        return ocupat;
+                    } else {
+                        return ocupat;
+                    }
+
+                }
+            }
+
+
+            // Funció afegir Llibre
+
+            $("#bAfegir").click(function() {
+                var titol = $("#titol").val();
+                var numP = $("#numP").val();
+                var cat = $("#categoria").val();
+                var col = $("#col").val();
+                var fila = $("#fila").val();
+
+                var ocupat = comprovarOcupat(col, fila);
+
+
+                if (!ocupat) {
+                    var llibre = new Llibre(titol, numP, cat, col, fila);
+                    llibres.push(llibre);
+
+
+                } else {
+                    alert("Ja tenim un Llibre a n'aquesta Posició.");
+                }
+
+
+            });
+
+
+            // Funció Borrar
+
+            $("#bBorrar").click(function() {
+                var col = $("#col").val();
+                var fila = $("#fila").val();
+
+                for (var i = 0; i < llibres.length; i++) {
+                    if (llibres[i].columna == col && llibres[i].fila == fila) {
+                        llibres.splice(i, 1);
+
+                    }
+                }
+
+            });
+
+            // Funció Llistar Llibres
+
+            $("#bLlistar").click(function() {
+
+                $("#contingut").empty();
+                var llista = $("<ol class='list-group'/>");
+
+                for (var i = 0; i < llibres.length; i++) {
+                    var x = i + 1;
+                    var llibre = "<li  class='list-group-item list-group-item-primary'>" + x + ". " + llibres[i].titol + ", " + llibres[i].numpagines + " pàgines, " + llibres[i].categoria + " . </li>";
+                    llista.append(llibre);
+
+                }
+
+
+                $("#contingut").append(llista);
+            });
+
+            // Funnció Trobar/Obtenir Llibre
+
+            function obtenirLlibre(col, fila) {
+
+                for (var i = 0; i < llibres.length; i++) {
+
+                    if (llibres[i].columna == col && llibres[i].fila == fila) {
+                        return llibres[i];
+
+
+                    }
+
+
+                }
+
+                return null;
+            }
+
+
+
+            // Funció Imprimir Taula
+
+            function imprimirtaula() {
+
+
+
+                var taula = $("<table class='table table-striped'/>");
+                var thead = $("<thead class='thead-dark'/>")
+
+                var tr = $("<tr/>");
+                var t = "<th> # </th>";
+                tr.append(t);
+
+                // Imprimir THEAD
+                for (var i = 0; i < 4; i++) {
+                    var th = "<th>" + i + "</th>";
+                    tr.append(th);
+                }
+
+                thead.append(tr);
+
+                taula.append(thead);
+
+
+                // Imprimir TBODY
+
+
+                var tr = $("<tr/>");
+
+
+                for (var x = 0; x <= 3; x++) {
+                    tr = $("<tr/>");
+                    var th = $("<th/>", {
+                        text: x
+                    });
+                    tr.append(th);
+
+                    for (var y = 0; y <= 3; y++) {
+
+                        lli = obtenirLlibre(y, x);
+                        console.log(lli);
+
+                        if (lli != null) {
+                            var img = $("<img/>", {
+                                src: lli.categoria + ".png",
+                                width: "50px"
+                            });
+                            var b = $("<p/>", {
+                                text: lli.titol
+                            });
+                            var s = $("<p/>", {
+                                text: lli.numpagines + " pagines"
+                            });
+                            td = $("<td/>");
+                            td.append(img, b, s);
+
+                        } else {
+                            var img = $("<img/>", {
+                                src: "empty.png",
+                                width: "50px"
+                            });
+                            td = $("<td/>");
+                            td.append(img);
+
+
+
+                        }
+                        tr.append(td);
+
+
+
+
+                    }
+                    taula.append(tr);
+                }
+
+                $("#contingut").append(taula);
+
+
+
+
+            }
+            // Funció Mostrar Taula Llibres 
+
+            $("#bTaula").click(function() {
+
+                $("#contingut").empty();
+                imprimirtaula();
+
+
+
+            });
+
+            // Funcio Alert Num Llibres
+
+            $("#bNumLlibres").click(function() {
+
+                alert("Hi ha " + llibres.length + " llibres.");
+
+            });
+
+
+
+
+
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+
+</html>

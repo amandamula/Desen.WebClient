@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <style>
+        .red {
+            color: red;
+        }
+        
+        .green {
+            color: green;
+        }
+        
+        .blue {
+            color: blue;
+        }
+        
+        .courier {
+            font-family: Courier;
+        }
+        
+        .arial {
+            font-family: Arial;
+        }
+        
+        .verdana {
+            font-family: Verdana;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <fieldset>
+            <div class="col">
+                <legend>EDIT STYLES</legend>
+            </div>
+            <div class="col">
+                <textarea cols="100" rows="5" id="txt"></textarea>
+            </div>
+            <div class="col">
+                FONT:
+                <select id="selfont">
+					<option value="courier">Courier</option>
+					<option value="verdana">Verdana</option>
+					<option value="arial">Arial</option>
+			</select> &nbsp; COLOR:
+                <select id="selcolor">
+					<option value="red">Red</option>
+					<option value="green">Green</option>
+					<option value="blue">Blue</option>
+			</select> &nbsp; SIZE:
+                <input type="text" value="10" id="txtsize" size="4" />
+                <button class="btn btn-dark" id="b1">APPLY STYLES</button>&nbsp;
+                <button class="btn btn-dark" id="b2">RESET STYLES</button>&nbsp;
+            </div>
+        </fieldset>
+
+        <div>
+            <p id="myText"></p>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+
+            function llevarEstils() {
+
+                $("#myText").removeClass("red");
+                $("#myText").removeClass("blue");
+                $("#myText").removeClass("green");
+                $("#myText").removeClass("courier");
+                $("#myText").removeClass("arial");
+                $("#myText").removeClass("verdana");
+                $("#myText").css("fontSize", "10px");
+            }
+
+            $("#b1").click(function() {
+
+                llevarEstils();
+
+                var font = $("#selfont").val();
+                var color = $("#selcolor").val();
+                var text = $("#txt").val();
+
+                $("#myText").text(text);
+
+                if (font == "courier") {
+                    $("#myText").addClass("courier");
+                } else if (font == "verdana") {
+                    $("#myText").addClass("verdana");
+                } else {
+                    $("#myText").addClass("arial");
+                }
+
+
+                if (color == "red") {
+                    $("#myText").addClass("red");
+                } else if (color == "green") {
+                    $("#myText").addClass("green");
+                } else if (color == "blue") {
+                    $("#myText").addClass("blue");
+                }
+
+                var mida = $("#txtsize").val() + "px";
+                $("#myText").css("fontSize", mida);
+
+
+                /*switch(color) {
+				case "red": $("#myText").addClass("red"); break;
+				case "green": $("#myText").addClass("green"); break;
+				case "blue": $("#myText").addClass("blue"); break;
+			}
+		
+			switch(font) {
+				case "courier": $("#myText").addClass("courier"); break;
+				case "verdana": $("#myText").addClass("verdana"); break;
+				case "arial": $("#myText").addClass("arial"); break;
+			}*/
+
+
+
+            });
+
+
+            $("#b2").click(function() {
+
+                llevarEstils();
+                var myText = $("#txt").val();
+                $("#myText").text(myText);
+            });
+
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
